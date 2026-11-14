@@ -12,6 +12,16 @@
 
 #include "CycleTimer.h"
 
+#include <stdlib.h>
+#define cudaCheck(call) do {                                      \
+    cudaError_t e_ = (call);                                      \
+    if (e_ != cudaSuccess) {                                      \
+        fprintf(stderr, "CUDA error at %s:%d: %s\n",              \
+                __FILE__, __LINE__, cudaGetErrorString(e_));      \
+        exit(EXIT_FAILURE);                                       \
+    }                                                             \
+} while (0)
+
 #define THREADS_PER_BLOCK 256
 
 
@@ -25,6 +35,32 @@ static inline int nextPow2(int n) {
     n |= n >> 16;
     n++;
     return n;
+}
+
+__global__ void upsweep_kernel(int* a, int rounded, int two_d, int two_dplus1) {
+    int t = blockIdx.x * blockDim.x + threadIdx.x;
+
+    // Each thread handles one upsweep iteration
+    long long i = (long long)t * two_dplus1;
+
+    // Make sure the right-hand index is within the array
+    if (i + two_dplus1 - 1 < rounded) {
+        a[i + two_dplus1 - 1] += a[i + two_d - 1];
+    }
+}
+
+__global__ void downsweep_kernel(int* a, int rounded, int two_d, int two_dplus1) {
+    int t = blockIdx.x * blockDim.x + threadIdx.x;
+
+    // Each thread handles one downsweep iteration
+    long long i = (long long)t * two_dplus1;
+
+    if (i + two_dplus1 - 1 < rounded) {
+        int tmp = a[i + two_d - 1];
+
+        a[i + two_d - 1] = a[i + two_dplus1 - 1];
+        a[i + two_dplus1 - 1] += tmp;
+    }
 }
 
 // exclusive_scan --
@@ -42,20 +78,34 @@ static inline int nextPow2(int n) {
 // Also, as per the comments in cudaScan(), you can implement an
 // "in-place" scan, since the timing harness makes a copy of input and
 // places it in result
-void exclusive_scan(int* input, int N, int* result)
-{
 
-    // CS149 TODO:
-    //
-    // Implement your exclusive scan implementation here.  Keep in
-    // mind that although the arguments to this function are device
-    // allocated arrays, this is a function that is running in a thread
-    // on the CPU.  Your implementation will need to make multiple calls
-    // to CUDA kernel functions (that you must write) to implement the
-    // scan.
+void exclusive_scan(int* input, int N, int* result) {
+    int rounded = nextPow2(N);
 
+    for (int two_d = 1; two_d < rounded; two_d *= 2) {
+        int two_dplus1 = 2 * two_d;
+        int numThreads = rounded / two_dplus1;
+        int blocks = (numThreads + THREADS_PER_BLOCK - 1) / THREADS_PER_BLOCK;
+        upsweep_kernel<<<blocks, THREADS_PER_BLOCK>>>(result, rounded, two_d, two_dplus1);
+        cudaCheck(cudaGetLastError());
+    }
 
+    cudaCheck(cudaMemset(result + rounded - 1, 0, sizeof(int)));
+
+    for (int two_d = rounded / 2; two_d >= 1; two_d /= 2) {
+        int two_dplus1 = 2 * two_d;
+        int numThreads = rounded / two_dplus1;
+        int blocks = (numThreads + THREADS_PER_BLOCK - 1) / THREADS_PER_BLOCK;
+        downsweep_kernel<<<blocks, THREADS_PER_BLOCK>>>(result, rounded, two_d, two_dplus1);
+        cudaCheck(cudaGetLastError());
+    }
+
+    cudaCheck(cudaDeviceSynchronize());
 }
+
+
+
+
 
 
 //
