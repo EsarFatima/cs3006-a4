@@ -6,9 +6,9 @@ Device 0: Tesla T4
    CUDA Cap:   7.5
 ---------------------------------------------------------
 Running 3 timing tests:
-Effective BW by CUDA saxpy: 271.093 ms		[4.123 GB/s]
-Kernel-only BW by CUDA saxpy: 4.721 ms		[236.733 GB/s]
-Effective BW by CUDA saxpy: 295.676 ms		[3.780 GB/s]
-Kernel-only BW by CUDA saxpy: 4.590 ms		[243.499 GB/s]
-Effective BW by CUDA saxpy: 289.964 ms		[3.854 GB/s]
-Kernel-only BW by CUDA saxpy: 4.652 ms		[240.245 GB/s]
+Effective BW by CUDA saxpy: 265.458 ms		[4.210 GB/s]
+Kernel-only BW by CUDA saxpy: 4.708 ms		[237.405 GB/s]
+Effective BW by CUDA saxpy: 289.488 ms		[3.861 GB/s]
+Kernel-only BW by CUDA saxpy: 4.645 ms		[240.616 GB/s]
+Effective BW by CUDA saxpy: 280.807 ms		[3.980 GB/s]
+Kernel-only BW by CUDA saxpy: 4.704 ms		[237.563 GB/s]

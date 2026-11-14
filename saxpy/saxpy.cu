@@ -6,6 +6,17 @@
 
 #include "CycleTimer.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+
+#define cudaCheck(call) do {                                      \
+    cudaError_t e_ = (call);                                      \
+    if (e_ != cudaSuccess) {                                      \
+        fprintf(stderr, "CUDA error at %s:%d: %s\n",              \
+                __FILE__, __LINE__, cudaGetErrorString(e_));      \
+        exit(EXIT_FAILURE);                                       \
+    }                                                             \
+} while (0)
 
 // return GB/sec
 float GBPerSec(int bytes, float sec) {
@@ -77,16 +88,16 @@ void saxpyCuda(int N, float alpha, float* xarray, float* yarray, float* resultar
     //
         
     // start timing after allocation of device memory
-    cudaMalloc((void**)&device_x, sizeof(float) * N);
-    cudaMalloc((void**)&device_y, sizeof(float) * N);
-    cudaMalloc((void**)&device_result, sizeof(float) * N);
+    cudaCheck(cudaMalloc((void**)&device_x, sizeof(float) * N));
+    cudaCheck(cudaMalloc((void**)&device_y, sizeof(float) * N));
+    cudaCheck(cudaMalloc((void**)&device_result, sizeof(float) * N));
     double startTime = CycleTimer::currentSeconds();
 
     //
     // CS149 TODO: copy input arrays to the GPU using cudaMemcpy
     //
-    cudaMemcpy(device_x, xarray, sizeof(float) * N, cudaMemcpyHostToDevice);
-    cudaMemcpy(device_y, yarray, sizeof(float) * N, cudaMemcpyHostToDevice);
+    cudaCheck(cudaMemcpy(device_x, xarray, sizeof(float) * N, cudaMemcpyHostToDevice));
+    cudaCheck(cudaMemcpy(device_y, yarray, sizeof(float) * N, cudaMemcpyHostToDevice));
    
     // run CUDA kernel. (notice the <<< >>> brackets indicating a CUDA
     // kernel launch) Execution on the GPU occurs here.
@@ -98,10 +109,10 @@ void saxpyCuda(int N, float alpha, float* xarray, float* yarray, float* resultar
     //
     saxpy_kernel<<<blocks, threadsPerBlock>>>(N, alpha, device_x, device_y, device_result);
 
-    cudaDeviceSynchronize();
+    cudaCheck(cudaDeviceSynchronize());
     
     double kernelEnd = CycleTimer::currentSeconds();
-    cudaMemcpy(resultarray, device_result, sizeof(float) * N, cudaMemcpyDeviceToHost);
+    cudaCheck(cudaMemcpy(resultarray, device_result, sizeof(float) * N, cudaMemcpyDeviceToHost));
     // end timing after result has been copied back into host memory
     double endTime = CycleTimer::currentSeconds();
     
