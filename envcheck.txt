@@ -1,0 +1,12 @@
+== OS: "Ubuntu 24.04.4 LTS"
+== glibc: ldd (Ubuntu GLIBC 2.39-0ubuntu8.9) 2.39
+== arch: x86_64
+== GPU:
+Tesla T4, 7.5, 15360 MiB, 580.82.07
+CUDA Version: 13.0
+== nvcc: Cuda compilation tools, release 13.0, V13.0.88
+== libraries the reference binaries need:
+ok: every library found
+== reference smoke tests (both must print a success line):
+Scan outputs are correct!
+***************** Correctness check passed **************************
