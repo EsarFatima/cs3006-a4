@@ -77,25 +77,34 @@ void saxpyCuda(int N, float alpha, float* xarray, float* yarray, float* resultar
     //
         
     // start timing after allocation of device memory
+    cudaMalloc((void**)&device_x, sizeof(float) * N);
+    cudaMalloc((void**)&device_y, sizeof(float) * N);
+    cudaMalloc((void**)&device_result, sizeof(float) * N);
     double startTime = CycleTimer::currentSeconds();
 
     //
     // CS149 TODO: copy input arrays to the GPU using cudaMemcpy
     //
-
+    cudaMemcpy(device_x, xarray, sizeof(float) * N, cudaMemcpyHostToDevice);
+    cudaMemcpy(device_y, yarray, sizeof(float) * N, cudaMemcpyHostToDevice);
    
     // run CUDA kernel. (notice the <<< >>> brackets indicating a CUDA
     // kernel launch) Execution on the GPU occurs here.
-    saxpy_kernel<<<blocks, threadsPerBlock>>>(N, alpha, device_x, device_y, device_result);
+    double kernelStart = CycleTimer::currentSeconds();
+    
 
     //
     // CS149 TODO: copy result from GPU back to CPU using cudaMemcpy
     //
+    saxpy_kernel<<<blocks, threadsPerBlock>>>(N, alpha, device_x, device_y, device_result);
 
+    cudaDeviceSynchronize();
     
+    double kernelEnd = CycleTimer::currentSeconds();
+    cudaMemcpy(resultarray, device_result, sizeof(float) * N, cudaMemcpyDeviceToHost);
     // end timing after result has been copied back into host memory
     double endTime = CycleTimer::currentSeconds();
-
+    
     cudaError_t errCode = cudaPeekAtLastError();
     if (errCode != cudaSuccess) {
         fprintf(stderr, "WARNING: A CUDA error occured: code=%d, %s\n",
@@ -103,11 +112,17 @@ void saxpyCuda(int N, float alpha, float* xarray, float* yarray, float* resultar
     }
 
     double overallDuration = endTime - startTime;
+    double kernelDuration = kernelEnd - kernelStart;
     printf("Effective BW by CUDA saxpy: %.3f ms\t\t[%.3f GB/s]\n", 1000.f * overallDuration, GBPerSec(totalBytes, overallDuration));
-
+     printf("Kernel-only BW by CUDA saxpy: %.3f ms\t\t[%.3f GB/s]\n",
+           1000.f * kernelDuration,
+           GBPerSec(totalBytes, kernelDuration));
     //
     // CS149 TODO: free memory buffers on the GPU using cudaFree
     //
+    cudaFree(device_x);
+    cudaFree(device_y);
+    cudaFree(device_result);
     
 }
 

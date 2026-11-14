@@ -1,0 +1,14 @@
+---------------------------------------------------------
+Found 1 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14913 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Running 3 timing tests:
+Effective BW by CUDA saxpy: 271.093 ms		[4.123 GB/s]
+Kernel-only BW by CUDA saxpy: 4.721 ms		[236.733 GB/s]
+Effective BW by CUDA saxpy: 295.676 ms		[3.780 GB/s]
+Kernel-only BW by CUDA saxpy: 4.590 ms		[243.499 GB/s]
+Effective BW by CUDA saxpy: 289.964 ms		[3.854 GB/s]
+Kernel-only BW by CUDA saxpy: 4.652 ms		[240.245 GB/s]
