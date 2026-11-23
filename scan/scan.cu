@@ -197,21 +197,97 @@ double cudaScanThrust(int* inarray, int* end, int* resultarray) {
 // indices `i` for which `device_input[i] == device_input[i+1]`.
 //
 // Returns the total number of pairs found
+__global__ void mark_repeats_kernel(
+    int* input,
+    int* flags,
+    int length)
+{
+    int i = blockIdx.x * blockDim.x + threadIdx.x;
+
+    if (i < length - 1) {
+        flags[i] = (input[i] == input[i + 1]) ? 1 : 0;
+    }
+}
+
+__global__ void scatter_repeats_kernel(
+    int* flags,
+    int* positions,
+    int length,
+    int* output)
+{
+    int i = blockIdx.x * blockDim.x + threadIdx.x;
+
+    if (i < length - 1 && flags[i] == 1) {
+        output[positions[i]] = i;
+    }
+}
+
 int find_repeats(int* device_input, int length, int* device_output) {
 
-    // CS149 TODO:
-    //
-    // Implement this function. You will probably want to
-    // make use of one or more calls to exclusive_scan(), as well as
-    // additional CUDA kernel launches.
-    //    
-    // Note: As in the scan code, the calling code ensures that
-    // allocated arrays are a power of 2 in size, so you can use your
-    // exclusive_scan function with them. However, your implementation
-    // must ensure that the results of find_repeats are correct given
-    // the actual array length.
+    if (length <= 1) {
+        return 0;
+    }
 
-    return 0; 
+    int n = length - 1;
+    int rounded = nextPow2(n);
+
+    int* device_flags;
+    int* device_positions;
+
+    cudaCheck(cudaMalloc(&device_flags, rounded * sizeof(int)));
+    cudaCheck(cudaMalloc(&device_positions, rounded * sizeof(int)));
+
+    int blocks = (n + THREADS_PER_BLOCK - 1) / THREADS_PER_BLOCK;
+
+    // Step 1: Mark adjacent repeated elements
+    mark_repeats_kernel<<<blocks, THREADS_PER_BLOCK>>>(
+        device_input, device_flags, length);
+    cudaCheck(cudaGetLastError());
+
+    // Step 2: Initialize padding elements
+    if (rounded > n) {
+        cudaCheck(cudaMemset(device_flags + n, 0,
+                             (rounded - n) * sizeof(int)));
+    }
+
+    // Step 3: Calculate output positions using exclusive scan
+    // Step 3: Copy flags into positions array
+cudaCheck(cudaMemcpy(
+    device_positions,
+    device_flags,
+    rounded * sizeof(int),
+    cudaMemcpyDeviceToDevice
+));
+
+// Step 4: Calculate output positions using exclusive scan
+exclusive_scan(device_positions, rounded, device_positions);
+
+    // Step 4: Scatter matching indices
+    scatter_repeats_kernel<<<blocks, THREADS_PER_BLOCK>>>(
+        device_flags, device_positions, length, device_output);
+    cudaCheck(cudaGetLastError());
+
+    // Step 5: Calculate total number of repeats
+    int total;
+    cudaCheck(cudaMemcpy(&total,
+                         device_positions + n - 1,
+                         sizeof(int),
+                         cudaMemcpyDeviceToHost));
+
+    int last_flag;
+    cudaCheck(cudaMemcpy(&last_flag,
+                         device_flags + n - 1,
+                         sizeof(int),
+                         cudaMemcpyDeviceToHost));
+
+    total += last_flag;
+
+    cudaCheck(cudaDeviceSynchronize());
+
+    cudaCheck(cudaFree(device_flags));
+    cudaCheck(cudaFree(device_positions));
+
+    return total;
 }
 
 
