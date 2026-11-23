@@ -13,6 +13,7 @@
 #include "noise.h"
 #include "sceneLoader.h"
 #include "util.h"
+#include "circleBoxTest.cu_inl"
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // Putting all the cuda kernels here
@@ -427,7 +428,184 @@ __global__ void kernelRenderCircles() {
     }
 }
 
+
+
+__global__ void kernelCountTileCircles(int* tileCounts) {
+
+    int tileIndex = blockIdx.x * blockDim.x + threadIdx.x;
+
+    int tilesX = (cuConstRendererParams.imageWidth + 15) / 16;
+    int tilesY = (cuConstRendererParams.imageHeight + 15) / 16;
+
+    int numTiles = tilesX * tilesY;
+
+    if (tileIndex >= numTiles)
+        return;
+
+    int tileX = tileIndex % tilesX;
+    int tileY = tileIndex / tilesX;
+
+    float invWidth = 1.f / cuConstRendererParams.imageWidth;
+    float invHeight = 1.f / cuConstRendererParams.imageHeight;
+
+    float tileL = tileX * 16 * invWidth;
+    float tileR = min((tileX + 1) * 16,
+                      cuConstRendererParams.imageWidth) * invWidth;
+
+    float tileB = tileY * 16 * invHeight;
+    float tileT = min((tileY + 1) * 16,
+                      cuConstRendererParams.imageHeight) * invHeight;
+
+    int count = 0;
+
+    for (int circleIndex = 0;
+         circleIndex < cuConstRendererParams.numCircles;
+         circleIndex++) {
+
+        int index3 = 3 * circleIndex;
+
+        float3 p = *(float3*)(
+            &cuConstRendererParams.position[index3]
+        );
+
+        float rad = cuConstRendererParams.radius[circleIndex];
+
+        if (circleInBoxConservative(
+                p.x, p.y, rad,
+                tileL, tileR, tileT, tileB)) {
+            count++;
+        }
+    }
+
+    tileCounts[tileIndex] = count;
+}
+
+
+__global__ void kernelComputeTileOffsets(
+    int* tileCounts,
+    int* tileOffsets) {
+
+    if (blockIdx.x != 0 || threadIdx.x != 0)
+        return;
+
+    int tilesX = (cuConstRendererParams.imageWidth + 15) / 16;
+    int tilesY = (cuConstRendererParams.imageHeight + 15) / 16;
+    int numTiles = tilesX * tilesY;
+
+    tileOffsets[0] = 0;
+
+    for (int i = 0; i < numTiles; i++) {
+        tileOffsets[i + 1] = tileOffsets[i] + tileCounts[i];
+    }
+}
+
+__global__ void kernelFillTileCircles(
+    int* tileOffsets,
+    int* tileCircles) {
+
+    int tileIndex = blockIdx.x * blockDim.x + threadIdx.x;
+
+    int tilesX = (cuConstRendererParams.imageWidth + 15) / 16;
+    int tilesY = (cuConstRendererParams.imageHeight + 15) / 16;
+
+    int numTiles = tilesX * tilesY;
+
+    if (tileIndex >= numTiles)
+        return;
+
+    int tileX = tileIndex % tilesX;
+    int tileY = tileIndex / tilesX;
+
+    float invWidth = 1.f / cuConstRendererParams.imageWidth;
+    float invHeight = 1.f / cuConstRendererParams.imageHeight;
+
+    float tileL = tileX * 16 * invWidth;
+    float tileR = min((tileX + 1) * 16,
+                      cuConstRendererParams.imageWidth) * invWidth;
+
+    float tileB = tileY * 16 * invHeight;
+    float tileT = min((tileY + 1) * 16,
+                      cuConstRendererParams.imageHeight) * invHeight;
+
+    int writeIndex = tileOffsets[tileIndex];
+
+    // Ascending circle order preserves the original blending order.
+    for (int circleIndex = 0;
+         circleIndex < cuConstRendererParams.numCircles;
+         circleIndex++) {
+
+        int index3 = 3 * circleIndex;
+
+        float3 p = *(float3*)(
+            &cuConstRendererParams.position[index3]
+        );
+
+        float rad = cuConstRendererParams.radius[circleIndex];
+
+        if (circleInBoxConservative(
+                p.x, p.y, rad,
+                tileL, tileR, tileT, tileB)) {
+
+            tileCircles[writeIndex++] = circleIndex;
+        }
+    }
+}
+
+
 ////////////////////////////////////////////////////////////////////////////////////////
+
+// Each thread owns one pixel and processes circles in input order.
+
+// Each CUDA block processes one 16x16 image tile.
+// All pixels in a tile process circles in their original input order.
+__global__ void kernelRenderPixels(
+    int* tileOffsets,
+    int* tileCircles) {
+
+    int pixelX = blockIdx.x * blockDim.x + threadIdx.x;
+    int pixelY = blockIdx.y * blockDim.y + threadIdx.y;
+
+    int width = cuConstRendererParams.imageWidth;
+    int height = cuConstRendererParams.imageHeight;
+
+    if (pixelX >= width || pixelY >= height)
+        return;
+
+    float invWidth = 1.f / width;
+    float invHeight = 1.f / height;
+
+    float2 pixelCenter = make_float2(
+        invWidth * (static_cast<float>(pixelX) + 0.5f),
+        invHeight * (static_cast<float>(pixelY) + 0.5f)
+    );
+
+    int pixelIndex = pixelY * width + pixelX;
+
+    float4* imagePtr =
+        (float4*)(&cuConstRendererParams.imageData[4 * pixelIndex]);
+
+    // Identify this pixel's tile.
+    int tilesX = (width + 15) / 16;
+    int tileIndex = blockIdx.y * tilesX + blockIdx.x;
+
+    // Get the circles assigned to this tile.
+    int start = tileOffsets[tileIndex];
+    int end = tileOffsets[tileIndex + 1];
+
+    // Process circles in original input order.
+    for (int listIndex = start; listIndex < end; listIndex++) {
+
+        int circleIndex = tileCircles[listIndex];
+        int index3 = 3 * circleIndex;
+
+        float3 p = *(float3*)(
+            &cuConstRendererParams.position[index3]
+        );
+
+        shadePixel(circleIndex, pixelCenter, p, imagePtr);
+    }
+}
+
 
 
 CudaRenderer::CudaRenderer() {
@@ -444,6 +622,10 @@ CudaRenderer::CudaRenderer() {
     cudaDeviceColor = NULL;
     cudaDeviceRadius = NULL;
     cudaDeviceImageData = NULL;
+    cudaDeviceTileCounts = NULL;
+    cudaDeviceTileOffsets = NULL;
+    cudaDeviceTileCircles = NULL;
+    totalTileEntries = 0;
 }
 
 CudaRenderer::~CudaRenderer() {
@@ -459,12 +641,16 @@ CudaRenderer::~CudaRenderer() {
         delete [] radius;
     }
 
-    if (cudaDevicePosition) {
+   if (cudaDevicePosition) {
         cudaFree(cudaDevicePosition);
         cudaFree(cudaDeviceVelocity);
         cudaFree(cudaDeviceColor);
         cudaFree(cudaDeviceRadius);
         cudaFree(cudaDeviceImageData);
+
+        cudaFree(cudaDeviceTileCounts);
+        cudaFree(cudaDeviceTileOffsets);
+        cudaFree(cudaDeviceTileCircles);
     }
 }
 
@@ -492,7 +678,7 @@ CudaRenderer::loadScene(SceneName scene, int seed) {
 
 void
 CudaRenderer::setup() {
-
+    
     int deviceCount = 0;
     std::string name;
     cudaError_t err = cudaGetDeviceCount(&deviceCount);
@@ -525,6 +711,15 @@ CudaRenderer::setup() {
     cudaMalloc(&cudaDeviceColor, sizeof(float) * 3 * numCircles);
     cudaMalloc(&cudaDeviceRadius, sizeof(float) * numCircles);
     cudaMalloc(&cudaDeviceImageData, sizeof(float) * 4 * image->width * image->height);
+    int tilesX = (image->width + 15) / 16;
+int tilesY = (image->height + 15) / 16;
+int numTiles = tilesX * tilesY;
+
+// Maximum possible entries: every circle could intersect every tile.
+
+
+cudaMalloc(&cudaDeviceTileCounts, sizeof(int) * numTiles);
+cudaMalloc(&cudaDeviceTileOffsets, sizeof(int) * (numTiles + 1));
 
     cudaMemcpy(cudaDevicePosition, position, sizeof(float) * 3 * numCircles, cudaMemcpyHostToDevice);
     cudaMemcpy(cudaDeviceVelocity, velocity, sizeof(float) * 3 * numCircles, cudaMemcpyHostToDevice);
@@ -633,13 +828,69 @@ CudaRenderer::advanceAnimation() {
     cudaDeviceSynchronize();
 }
 
+
 void
 CudaRenderer::render() {
+    
+    int tilesX = (image->width + 15) / 16;
+    int tilesY = (image->height + 15) / 16;
+    int numTiles = tilesX * tilesY;
 
-    // 256 threads per block is a healthy number
-    dim3 blockDim(256, 1);
-    dim3 gridDim((numCircles + blockDim.x - 1) / blockDim.x);
+    // Step 1: Count circles intersecting each tile.
+    dim3 tileBlock(256);
+    dim3 tileGrid((numTiles + 255) / 256);
 
-    kernelRenderCircles<<<gridDim, blockDim>>>();
+    kernelCountTileCircles<<<tileGrid, tileBlock>>>(
+        cudaDeviceTileCounts
+    );
+     cudaDeviceSynchronize();
+
+    // Step 2: Calculate prefix-sum offsets.
+    kernelComputeTileOffsets<<<1, 1>>>(
+        cudaDeviceTileCounts,
+        cudaDeviceTileOffsets
+    );
     cudaDeviceSynchronize();
+
+    // Step 3: Retrieve the total number of entries.
+    cudaMemcpy(
+        &totalTileEntries,
+        cudaDeviceTileOffsets + numTiles,
+        sizeof(int),
+        cudaMemcpyDeviceToHost
+    );
+    
+   
+    // Step 4: Allocate exactly the required circle-list memory.
+    if (cudaDeviceTileCircles != NULL) {
+        cudaFree(cudaDeviceTileCircles);
+        cudaDeviceTileCircles = NULL;
+    }
+
+    if (totalTileEntries > 0) {
+        cudaMalloc(
+            &cudaDeviceTileCircles,
+            sizeof(int) * (size_t)totalTileEntries
+        );
+    }
+
+    // Step 5: Fill each tile's circle list.
+    kernelFillTileCircles<<<tileGrid, tileBlock>>>(
+        cudaDeviceTileOffsets,
+        cudaDeviceTileCircles
+    );
+
+    // Step 6: Render pixels using their tile's circle list.
+dim3 blockDim(16, 16, 1);
+dim3 gridDim(tilesX, tilesY, 1);
+
+kernelRenderPixels<<<gridDim, blockDim>>>(
+    cudaDeviceTileOffsets,
+    cudaDeviceTileCircles
+);
+
+   
+    cudaDeviceSynchronize();
+
 }
+
