@@ -481,21 +481,48 @@ __global__ void kernelCountTileCircles(int* tileCounts) {
 }
 
 
-__global__ void kernelComputeTileOffsets(
-    int* tileCounts,
-    int* tileOffsets) {
+// Round up to the next power of two.
+static inline int nextPow2Renderer(int n) {
+    int p = 1;
+    while (p < n) {
+        p *= 2;
+    }
+    return p;
+}
 
-    if (blockIdx.x != 0 || threadIdx.x != 0)
-        return;
+// Parallel Blelloch scan: upsweep.
+__global__ void tileScanUpsweep(
+    int* data,
+    int rounded,
+    int two_d,
+    int two_dplus1)
+{
+    int t = blockIdx.x * blockDim.x + threadIdx.x;
+    long long i = (long long)t * two_dplus1;
 
-    int tilesX = (cuConstRendererParams.imageWidth + 15) / 16;
-    int tilesY = (cuConstRendererParams.imageHeight + 15) / 16;
-    int numTiles = tilesX * tilesY;
+    if (i + two_dplus1 - 1 < rounded) {
+        data[i + two_dplus1 - 1] +=
+            data[i + two_d - 1];
+    }
+}
 
-    tileOffsets[0] = 0;
+// Parallel Blelloch scan: downsweep.
+__global__ void tileScanDownsweep(
+    int* data,
+    int rounded,
+    int two_d,
+    int two_dplus1)
+{
+    int t = blockIdx.x * blockDim.x + threadIdx.x;
+    long long i = (long long)t * two_dplus1;
 
-    for (int i = 0; i < numTiles; i++) {
-        tileOffsets[i + 1] = tileOffsets[i] + tileCounts[i];
+    if (i + two_dplus1 - 1 < rounded) {
+        int temp = data[i + two_d - 1];
+
+        data[i + two_d - 1] =
+            data[i + two_dplus1 - 1];
+
+        data[i + two_dplus1 - 1] += temp;
     }
 }
 
@@ -719,7 +746,8 @@ int numTiles = tilesX * tilesY;
 
 
 cudaMalloc(&cudaDeviceTileCounts, sizeof(int) * numTiles);
-cudaMalloc(&cudaDeviceTileOffsets, sizeof(int) * (numTiles + 1));
+int scanSize = nextPow2Renderer(numTiles + 1);
+cudaMalloc(&cudaDeviceTileOffsets, sizeof(int) * scanSize);
 
     cudaMemcpy(cudaDevicePosition, position, sizeof(float) * 3 * numCircles, cudaMemcpyHostToDevice);
     cudaMemcpy(cudaDeviceVelocity, velocity, sizeof(float) * 3 * numCircles, cudaMemcpyHostToDevice);
@@ -845,11 +873,49 @@ CudaRenderer::render() {
     );
      cudaDeviceSynchronize();
 
-    // Step 2: Calculate prefix-sum offsets.
-    kernelComputeTileOffsets<<<1, 1>>>(
+    // Step 2: Calculate prefix-sum offsets using parallel Blelloch scan.
+    int scanSize = nextPow2Renderer(numTiles + 1);
+
+    cudaMemcpy(
+        cudaDeviceTileOffsets,
         cudaDeviceTileCounts,
-        cudaDeviceTileOffsets
+        sizeof(int) * numTiles,
+        cudaMemcpyDeviceToDevice
     );
+
+    cudaMemset(
+        cudaDeviceTileOffsets + numTiles,
+        0,
+        sizeof(int) * (scanSize - numTiles)
+    );
+
+    // Upsweep phase.
+    for (int two_d = 1; two_d < scanSize; two_d *= 2) {
+        int two_dplus1 = 2 * two_d;
+        int threads = (scanSize / two_dplus1 + 255) / 256;
+
+        tileScanUpsweep<<<threads, 256>>>(
+            cudaDeviceTileOffsets, scanSize, two_d, two_dplus1
+        );
+    }
+
+    // Set the root to zero.
+    cudaMemset(
+        cudaDeviceTileOffsets + scanSize - 1,
+        0,
+        sizeof(int)
+    );
+
+    // Downsweep phase.
+    for (int two_d = scanSize / 2; two_d >= 1; two_d /= 2) {
+        int two_dplus1 = 2 * two_d;
+        int threads = (scanSize / two_dplus1 + 255) / 256;
+
+        tileScanDownsweep<<<threads, 256>>>(
+            cudaDeviceTileOffsets, scanSize, two_d, two_dplus1
+        );
+    }
+
     cudaDeviceSynchronize();
 
     // Step 3: Retrieve the total number of entries.
