@@ -23,6 +23,7 @@ class CudaRenderer : public CircleRenderer {
   int* cudaDeviceTileOffsets;
   int* cudaDeviceTileCircles;
   int totalTileEntries;
+  size_t tileCirclesCapacity;
  public:
   CudaRenderer();
   virtual ~CudaRenderer();

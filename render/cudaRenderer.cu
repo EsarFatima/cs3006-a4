@@ -107,7 +107,7 @@ __global__ void kernelClearImage(float r, float g, float b, float a) {
 }
 
 // kernelAdvanceFireWorks
-// 
+//
 // Update the position of the fireworks (if circle is firework)
 __global__ void kernelAdvanceFireWorks() {
     const float dt = 1.f / 60.f;
@@ -122,7 +122,7 @@ __global__ void kernelAdvanceFireWorks() {
     if (index >= cuConstRendererParams.numCircles)
         return;
 
-    if (0 <= index && index < NUM_FIREWORKS) { // firework center; no update 
+    if (0 <= index && index < NUM_FIREWORKS) { // firework center; no update
         return;
     }
 
@@ -149,9 +149,9 @@ __global__ void kernelAdvanceFireWorks() {
     float cxsx = sx - cx;
     float cysy = sy - cy;
 
-    // compute distance from fire-work 
+    // compute distance from fire-work
     float dist = sqrt(cxsx * cxsx + cysy * cysy);
-    if (dist > maxDist) { // restore to starting position 
+    if (dist > maxDist) { // restore to starting position
         // random starting position on fire-work's rim
         float angle = (sfIdx * 2 * pi)/NUM_SPARKS;
         float sinA = sin(angle);
@@ -163,60 +163,60 @@ __global__ void kernelAdvanceFireWorks() {
         position[index3j+1] = position[index3i+1] + y;
         position[index3j+2] = 0.0f;
 
-        // travel scaled unit length 
+        // travel scaled unit length
         velocity[index3j] = cosA/5.0;
         velocity[index3j+1] = sinA/5.0;
         velocity[index3j+2] = 0.0f;
     }
 }
 
-// kernelAdvanceHypnosis   
+// kernelAdvanceHypnosis
 //
 // Update the radius/color of the circles
-__global__ void kernelAdvanceHypnosis() { 
+__global__ void kernelAdvanceHypnosis() {
     int index = blockIdx.x * blockDim.x + threadIdx.x;
-    if (index >= cuConstRendererParams.numCircles) 
-        return; 
+    if (index >= cuConstRendererParams.numCircles)
+        return;
 
-    float* radius = cuConstRendererParams.radius; 
+    float* radius = cuConstRendererParams.radius;
 
     float cutOff = 0.5f;
-    // place circle back in center after reaching threshold radisus 
-    if (radius[index] > cutOff) { 
-        radius[index] = 0.02f; 
-    } else { 
-        radius[index] += 0.01f; 
-    }   
-}   
+    // place circle back in center after reaching threshold radisus
+    if (radius[index] > cutOff) {
+        radius[index] = 0.02f;
+    } else {
+        radius[index] += 0.01f;
+    }
+}
 
 
 // kernelAdvanceBouncingBalls
-// 
+//
 // Update the positino of the balls
-__global__ void kernelAdvanceBouncingBalls() { 
+__global__ void kernelAdvanceBouncingBalls() {
     const float dt = 1.f / 60.f;
     const float kGravity = -2.8f; // sorry Newton
     const float kDragCoeff = -0.8f;
     const float epsilon = 0.001f;
 
-    int index = blockIdx.x * blockDim.x + threadIdx.x; 
-   
-    if (index >= cuConstRendererParams.numCircles) 
-        return; 
+    int index = blockIdx.x * blockDim.x + threadIdx.x;
 
-    float* velocity = cuConstRendererParams.velocity; 
-    float* position = cuConstRendererParams.position; 
+    if (index >= cuConstRendererParams.numCircles)
+        return;
+
+    float* velocity = cuConstRendererParams.velocity;
+    float* position = cuConstRendererParams.position;
 
     int index3 = 3 * index;
     // reverse velocity if center position < 0
     float oldVelocity = velocity[index3+1];
     float oldPosition = position[index3+1];
 
-    if (oldVelocity == 0.f && oldPosition == 0.f) { // stop-condition 
+    if (oldVelocity == 0.f && oldPosition == 0.f) { // stop-condition
         return;
     }
 
-    if (position[index3+1] < 0 && oldVelocity < 0.f) { // bounce ball 
+    if (position[index3+1] < 0 && oldVelocity < 0.f) { // bounce ball
         velocity[index3+1] *= kDragCoeff;
     }
 
@@ -228,7 +228,7 @@ __global__ void kernelAdvanceBouncingBalls() {
 
     if (fabsf(velocity[index3+1] - oldVelocity) < epsilon
         && oldPosition < 0.0f
-        && fabsf(position[index3+1]-oldPosition) < epsilon) { // stop ball 
+        && fabsf(position[index3+1]-oldPosition) < epsilon) { // stop ball
         velocity[index3+1] = 0.f;
         position[index3+1] = 0.f;
     }
@@ -653,6 +653,7 @@ CudaRenderer::CudaRenderer() {
     cudaDeviceTileOffsets = NULL;
     cudaDeviceTileCircles = NULL;
     totalTileEntries = 0;
+    tileCirclesCapacity = 0;
 }
 
 CudaRenderer::~CudaRenderer() {
@@ -705,7 +706,7 @@ CudaRenderer::loadScene(SceneName scene, int seed) {
 
 void
 CudaRenderer::setup() {
-    
+
     int deviceCount = 0;
     std::string name;
     cudaError_t err = cudaGetDeviceCount(&deviceCount);
@@ -725,7 +726,7 @@ CudaRenderer::setup() {
         printf("   CUDA Cap:   %d.%d\n", deviceProps.major, deviceProps.minor);
     }
     printf("---------------------------------------------------------\n");
-    
+
     // By this time the scene should be loaded.  Now copy all the key
     // data structures into device memory so they are accessible to
     // CUDA kernels
@@ -850,8 +851,8 @@ CudaRenderer::advanceAnimation() {
         kernelAdvanceBouncingBalls<<<gridDim, blockDim>>>();
     } else if (sceneName == HYPNOSIS) {
         kernelAdvanceHypnosis<<<gridDim, blockDim>>>();
-    } else if (sceneName == FIREWORKS) { 
-        kernelAdvanceFireWorks<<<gridDim, blockDim>>>(); 
+    } else if (sceneName == FIREWORKS) {
+        kernelAdvanceFireWorks<<<gridDim, blockDim>>>();
     }
     cudaDeviceSynchronize();
 }
@@ -859,7 +860,7 @@ CudaRenderer::advanceAnimation() {
 
 void
 CudaRenderer::render() {
-    
+
     int tilesX = (image->width + 15) / 16;
     int tilesY = (image->height + 15) / 16;
     int numTiles = tilesX * tilesY;
@@ -925,20 +926,24 @@ CudaRenderer::render() {
         sizeof(int),
         cudaMemcpyDeviceToHost
     );
-    
-   
-    // Step 4: Allocate exactly the required circle-list memory.
+
+
+
+   // Step 4: Grow the circle-list buffer only when necessary.
+if ((size_t)totalTileEntries > tileCirclesCapacity) {
+
     if (cudaDeviceTileCircles != NULL) {
         cudaFree(cudaDeviceTileCircles);
         cudaDeviceTileCircles = NULL;
     }
 
-    if (totalTileEntries > 0) {
-        cudaMalloc(
-            &cudaDeviceTileCircles,
-            sizeof(int) * (size_t)totalTileEntries
-        );
-    }
+    cudaMalloc(
+        &cudaDeviceTileCircles,
+        sizeof(int) * (size_t)totalTileEntries
+    );
+
+    tileCirclesCapacity = (size_t)totalTileEntries;
+}
 
     // Step 5: Fill each tile's circle list.
     kernelFillTileCircles<<<tileGrid, tileBlock>>>(
@@ -955,7 +960,7 @@ kernelRenderPixels<<<gridDim, blockDim>>>(
     cudaDeviceTileCircles
 );
 
-   
+
     cudaDeviceSynchronize();
 
 }
