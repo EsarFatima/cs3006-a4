@@ -430,13 +430,13 @@ __global__ void kernelRenderCircles() {
 
 
 
+
 __global__ void kernelCountTileCircles(int* tileCounts) {
 
-    int tileIndex = blockIdx.x * blockDim.x + threadIdx.x;
+    int tileIndex = blockIdx.x;
 
     int tilesX = (cuConstRendererParams.imageWidth + 15) / 16;
     int tilesY = (cuConstRendererParams.imageHeight + 15) / 16;
-
     int numTiles = tilesX * tilesY;
 
     if (tileIndex >= numTiles)
@@ -456,11 +456,14 @@ __global__ void kernelCountTileCircles(int* tileCounts) {
     float tileT = min((tileY + 1) * 16,
                       cuConstRendererParams.imageHeight) * invHeight;
 
+    __shared__ int partialCounts[256];
+
+    int tid = threadIdx.x;
     int count = 0;
 
-    for (int circleIndex = 0;
+    for (int circleIndex = tid;
          circleIndex < cuConstRendererParams.numCircles;
-         circleIndex++) {
+         circleIndex += blockDim.x) {
 
         int index3 = 3 * circleIndex;
 
@@ -477,9 +480,20 @@ __global__ void kernelCountTileCircles(int* tileCounts) {
         }
     }
 
-    tileCounts[tileIndex] = count;
-}
+    partialCounts[tid] = count;
+    __syncthreads();
 
+    for (int stride = 128; stride > 0; stride >>= 1) {
+        if (tid < stride) {
+            partialCounts[tid] += partialCounts[tid + stride];
+        }
+        __syncthreads();
+    }
+
+    if (tid == 0) {
+        tileCounts[tileIndex] = partialCounts[0];
+    }
+}
 
 // Round up to the next power of two.
 static inline int nextPow2Renderer(int n) {
@@ -868,8 +882,9 @@ CudaRenderer::render() {
     // Step 1: Count circles intersecting each tile.
     dim3 tileBlock(256);
     dim3 tileGrid((numTiles + 255) / 256);
+    dim3 countGrid(numTiles);
 
-    kernelCountTileCircles<<<tileGrid, tileBlock>>>(
+    kernelCountTileCircles<<<countGrid, tileBlock>>>(
         cudaDeviceTileCounts
     );
      cudaDeviceSynchronize();
