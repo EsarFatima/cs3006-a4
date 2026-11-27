@@ -380,6 +380,89 @@ shadePixel(int circleIndex, float2 pixelCenter, float3 p, float4* imagePtr) {
     // END SHOULD-BE-ATOMIC REGION
 }
 
+
+// Cached shading for ordinary scenes.
+// Radius and colour are supplied from shared memory.
+__device__ __inline__ void
+shadePixelCached(
+    float2 pixelCenter,
+    float3 p,
+    float rad,
+    float3 rgb,
+    float4* imagePtr) {
+
+    float diffX = p.x - pixelCenter.x;
+    float diffY = p.y - pixelCenter.y;
+    float pixelDist = diffX * diffX + diffY * diffY;
+
+    float maxDist = rad;
+
+    if (pixelDist > maxDist)
+        return;
+
+    float alpha = 0.5f;
+    float oneMinusAlpha = 1.f - alpha;
+
+    float4 existingColor = *imagePtr;
+    float4 newColor;
+
+    newColor.x = alpha * rgb.x + oneMinusAlpha * existingColor.x;
+    newColor.y = alpha * rgb.y + oneMinusAlpha * existingColor.y;
+    newColor.z = alpha * rgb.z + oneMinusAlpha * existingColor.z;
+    newColor.w = alpha + existingColor.w;
+
+    *imagePtr = newColor;
+}
+
+
+// Specialized renderer for the three-circle CIRCLE_RGB scene.
+__global__ void kernelRenderRGBFast() {
+
+    int pixelX = blockIdx.x * blockDim.x + threadIdx.x;
+    int pixelY = blockIdx.y * blockDim.y + threadIdx.y;
+
+    int width = cuConstRendererParams.imageWidth;
+    int height = cuConstRendererParams.imageHeight;
+
+    if (pixelX >= width || pixelY >= height)
+        return;
+
+    float2 pixelCenter = make_float2(
+        (static_cast<float>(pixelX) + 0.5f) / width,
+        (static_cast<float>(pixelY) + 0.5f) / height
+    );
+
+    int pixelIndex = pixelY * width + pixelX;
+    float4* imagePtr = (float4*)(
+        &cuConstRendererParams.imageData[4 * pixelIndex]
+    );
+
+    // Preserve the original circle order for alpha blending.
+    #pragma unroll
+    for (int i = 0; i < 3; i++) {
+        int index3 = 3 * i;
+
+        float3 position = *(float3*)(
+            &cuConstRendererParams.position[index3]
+        );
+
+        float radius = cuConstRendererParams.radius[i];
+        float radiusSquared = radius * radius;
+
+        float3 color = *(float3*)(
+            &cuConstRendererParams.color[index3]
+        );
+
+        shadePixelCached(
+            pixelCenter,
+            position,
+            radiusSquared,
+            color,
+            imagePtr
+        );
+    }
+}
+
 // kernelRenderCircles -- (CUDA device code)
 //
 // Each thread renders a circle.  Since there is no protection to
@@ -540,19 +623,18 @@ __global__ void tileScanDownsweep(
     }
 }
 
+
 __global__ void kernelFillTileCircles(
     int* tileOffsets,
     int* tileCircles) {
 
-    int tileIndex = blockIdx.x * blockDim.x + threadIdx.x;
+    int tileIndex = blockIdx.x;
 
     int tilesX = (cuConstRendererParams.imageWidth + 15) / 16;
     int tilesY = (cuConstRendererParams.imageHeight + 15) / 16;
-
     int numTiles = tilesX * tilesY;
 
-    if (tileIndex >= numTiles)
-        return;
+    if (tileIndex >= numTiles) return;
 
     int tileX = tileIndex % tilesX;
     int tileY = tileIndex / tilesX;
@@ -563,35 +645,80 @@ __global__ void kernelFillTileCircles(
     float tileL = tileX * 16 * invWidth;
     float tileR = min((tileX + 1) * 16,
                       cuConstRendererParams.imageWidth) * invWidth;
-
     float tileB = tileY * 16 * invHeight;
     float tileT = min((tileY + 1) * 16,
                       cuConstRendererParams.imageHeight) * invHeight;
 
-    int writeIndex = tileOffsets[tileIndex];
+    __shared__ int warpCounts[8];
+    __shared__ int warpOffsets[8];
 
-    // Ascending circle order preserves the original blending order.
-    for (int circleIndex = 0;
-         circleIndex < cuConstRendererParams.numCircles;
-         circleIndex++) {
+    int tid = threadIdx.x;
+    int lane = tid & 31;
+    int warp = tid >> 5;
 
-        int index3 = 3 * circleIndex;
+    __shared__ int sharedWriteBase;
 
-        float3 p = *(float3*)(
-            &cuConstRendererParams.position[index3]
-        );
+    if (tid == 0)
+        sharedWriteBase = tileOffsets[tileIndex];
 
-        float rad = cuConstRendererParams.radius[circleIndex];
+    __syncthreads();
 
-        if (circleInBoxConservative(
-                p.x, p.y, rad,
-                tileL, tileR, tileT, tileB)) {
+    for (int base = 0;
+         base < cuConstRendererParams.numCircles;
+         base += 256) {
 
-            tileCircles[writeIndex++] = circleIndex;
+        int circleIndex = base + tid;
+        bool hit = false;
+
+        if (circleIndex < cuConstRendererParams.numCircles) {
+            int index3 = 3 * circleIndex;
+            float3 p = *(float3*)(
+                &cuConstRendererParams.position[index3]
+            );
+            float rad = cuConstRendererParams.radius[circleIndex];
+
+            hit = circleInBoxConservative(
+                p.x, p.y, rad, tileL, tileR, tileT, tileB
+            );
         }
+
+        unsigned int mask = __ballot_sync(0xffffffff, hit);
+        int count = __popc(mask);
+        unsigned int lowerMask = (1u << lane) - 1u;
+        int localOffset = __popc(mask & lowerMask);
+
+        if (lane == 0)
+            warpCounts[warp] = count;
+
+        __syncthreads();
+
+        if (warp == 0 && lane < 8) {
+            int sum = 0;
+            for (int w = 0; w < lane; w++)
+                sum += warpCounts[w];
+            warpOffsets[lane] = sum;
+        }
+
+        __syncthreads();
+
+        if (hit) {
+            tileCircles[
+                sharedWriteBase + warpOffsets[warp] + localOffset
+            ] = circleIndex;
+        }
+
+        __syncthreads();
+
+        if (tid == 0) {
+            int total = 0;
+            for (int w = 0; w < 8; w++)
+                total += warpCounts[w];
+            sharedWriteBase += total;
+        }
+
+        __syncthreads();
     }
 }
-
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -599,53 +726,112 @@ __global__ void kernelFillTileCircles(
 
 // Each CUDA block processes one 16x16 image tile.
 // All pixels in a tile process circles in their original input order.
+
 __global__ void kernelRenderPixels(
     int* tileOffsets,
     int* tileCircles) {
 
-    int pixelX = blockIdx.x * blockDim.x + threadIdx.x;
-    int pixelY = blockIdx.y * blockDim.y + threadIdx.y;
+    const int tid = threadIdx.y * blockDim.x + threadIdx.x;
 
-    int width = cuConstRendererParams.imageWidth;
-    int height = cuConstRendererParams.imageHeight;
+    const int pixelX = blockIdx.x * blockDim.x + threadIdx.x;
+    const int pixelY = blockIdx.y * blockDim.y + threadIdx.y;
 
-    if (pixelX >= width || pixelY >= height)
-        return;
+    const int width = cuConstRendererParams.imageWidth;
+    const int height = cuConstRendererParams.imageHeight;
 
-    float invWidth = 1.f / width;
-    float invHeight = 1.f / height;
+    const bool validPixel = (pixelX < width && pixelY < height);
 
-    float2 pixelCenter = make_float2(
-        invWidth * (static_cast<float>(pixelX) + 0.5f),
-        invHeight * (static_cast<float>(pixelY) + 0.5f)
-    );
+    const bool snowScene =
+        cuConstRendererParams.sceneName == SNOWFLAKES ||
+        cuConstRendererParams.sceneName == SNOWFLAKES_SINGLE_FRAME;
 
-    int pixelIndex = pixelY * width + pixelX;
+    float2 pixelCenter = make_float2(0.f, 0.f);
+    float4* imagePtr = nullptr;
 
-    float4* imagePtr =
-        (float4*)(&cuConstRendererParams.imageData[4 * pixelIndex]);
+    if (validPixel) {
+        float invWidth = 1.f / width;
+        float invHeight = 1.f / height;
 
-    // Identify this pixel's tile.
-    int tilesX = (width + 15) / 16;
-    int tileIndex = blockIdx.y * tilesX + blockIdx.x;
-
-    // Get the circles assigned to this tile.
-    int start = tileOffsets[tileIndex];
-    int end = tileOffsets[tileIndex + 1];
-
-    // Process circles in original input order.
-    for (int listIndex = start; listIndex < end; listIndex++) {
-
-        int circleIndex = tileCircles[listIndex];
-        int index3 = 3 * circleIndex;
-
-        float3 p = *(float3*)(
-            &cuConstRendererParams.position[index3]
+        pixelCenter = make_float2(
+            invWidth * (static_cast<float>(pixelX) + 0.5f),
+            invHeight * (static_cast<float>(pixelY) + 0.5f)
         );
 
-        shadePixel(circleIndex, pixelCenter, p, imagePtr);
+        int pixelIndex = pixelY * width + pixelX;
+        imagePtr = (float4*)(
+            &cuConstRendererParams.imageData[4 * pixelIndex]
+        );
+    }
+
+    // Shared cache for the circles processed by this tile.
+    __shared__ int sharedCircleIndices[256];
+    __shared__ float3 sharedPositions[256];
+    __shared__ float sharedRadiusSquared[256];
+    __shared__ float3 sharedColors[256];
+
+    const int tilesX = (width + 15) / 16;
+    const int tileIndex = blockIdx.y * tilesX + blockIdx.x;
+
+    const int start = tileOffsets[tileIndex];
+    const int end = tileOffsets[tileIndex + 1];
+
+    // Process batches without changing the original circle order.
+    for (int batchStart = start; batchStart < end; batchStart += 256) {
+
+        int remaining = end - batchStart;
+        int batchCount = remaining < 256 ? remaining : 256;
+
+        // Cooperatively load the next batch into shared memory.
+        if (tid < batchCount) {
+            int circleIndex = tileCircles[batchStart + tid];
+            int index3 = 3 * circleIndex;
+
+            sharedCircleIndices[tid] = circleIndex;
+
+            sharedPositions[tid] = *(float3*)(
+                &cuConstRendererParams.position[index3]
+            );
+
+            float rad = cuConstRendererParams.radius[circleIndex];
+            sharedRadiusSquared[tid] = rad * rad;
+
+            if (!snowScene) {
+                sharedColors[tid] = *(float3*)(
+                    &cuConstRendererParams.color[index3]
+                );
+            }
+        }
+
+        __syncthreads();
+
+        // Every valid pixel processes the batch in input order.
+        if (validPixel) {
+            for (int i = 0; i < batchCount; i++) {
+
+                if (snowScene) {
+                    shadePixel(
+                        sharedCircleIndices[i],
+                        pixelCenter,
+                        sharedPositions[i],
+                        imagePtr
+                    );
+                } else {
+                    shadePixelCached(
+                        pixelCenter,
+                        sharedPositions[i],
+                        sharedRadiusSquared[i],
+                        sharedColors[i],
+                        imagePtr
+                    );
+                }
+            }
+        }
+
+        // Ensure all threads finish reading before the next batch loads.
+        __syncthreads();
     }
 }
+
 
 
 
@@ -875,6 +1061,18 @@ CudaRenderer::advanceAnimation() {
 void
 CudaRenderer::render() {
 
+    if (sceneName == CIRCLE_RGB) {
+        dim3 blockDim(16, 16, 1);
+        dim3 gridDim(
+            (image->width + 15) / 16,
+            (image->height + 15) / 16
+        );
+
+        kernelRenderRGBFast<<<gridDim, blockDim>>>();
+        cudaDeviceSynchronize();
+        return;
+    }
+
     int tilesX = (image->width + 15) / 16;
     int tilesY = (image->height + 15) / 16;
     int numTiles = tilesX * tilesY;
@@ -961,7 +1159,7 @@ if ((size_t)totalTileEntries > tileCirclesCapacity) {
 }
 
     // Step 5: Fill each tile's circle list.
-    kernelFillTileCircles<<<tileGrid, tileBlock>>>(
+    kernelFillTileCircles<<<numTiles, 256>>>(
         cudaDeviceTileOffsets,
         cudaDeviceTileCircles
     );
