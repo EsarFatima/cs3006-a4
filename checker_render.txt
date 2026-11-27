@@ -1,0 +1,57 @@
+
+Running scene: rgb...
+[rgb] Correctness passed!
+[rgb] Student times:  [0.2572, 0.2561, 0.2625]
+[rgb] Reference times:  [0.2645, 0.2818, 0.2769]
+
+Running scene: rand10k...
+[rand10k] Correctness passed!
+[rand10k] Student times:  [3.733, 4.2844, 4.2757]
+[rand10k] Reference times:  [6.2101, 5.8804, 5.9905]
+
+Running scene: rand100k...
+[rand100k] Correctness passed!
+[rand100k] Student times:  [40.1843, 40.139, 40.2954]
+[rand100k] Reference times:  [56.1951, 43.1026, 40.9415]
+
+Running scene: pattern...
+[pattern] Correctness passed!
+[pattern] Student times:  [0.781, 0.7606, 0.8761]
+[pattern] Reference times:  [0.6761, 0.6875, 0.6838]
+
+Running scene: snowsingle...
+[snowsingle] Correctness passed!
+[snowsingle] Student times:  [22.5998, 22.6017, 26.4017]
+[snowsingle] Reference times:  [39.9653, 36.8915, 37.8459]
+
+Running scene: biglittle...
+[biglittle] Correctness passed!
+[biglittle] Student times:  [20.91, 20.7744, 23.5489]
+[biglittle] Reference times:  [30.0371, 30.2763, 31.7379]
+
+Running scene: rand1M...
+[rand1M] Correctness passed!
+[rand1M] Student times:  [156.7674, 155.8379, 155.9993]
+[rand1M] Reference times:  [228.8995, 230.5978, 230.3788]
+
+Running scene: micro2M...
+[micro2M] Correctness passed!
+[micro2M] Student times:  [297.0808, 297.474, 299.0744]
+[micro2M] Reference times:  [443.6524, 443.0703, 443.9388]
+------------
+Score table:
+------------
+--------------------------------------------------------------------------
+| Scene Name      | Ref Time (T_ref) | Your Time (T)   | Score           |
+--------------------------------------------------------------------------
+| rgb             | 0.2645           | 0.2561          | 9               |
+| rand10k         | 5.8804           | 3.733           | 9               |
+| rand100k        | 40.9415          | 40.139          | 9               |
+| pattern         | 0.6761           | 0.7606          | 9               |
+| snowsingle      | 36.8915          | 22.5998         | 9               |
+| biglittle       | 30.0371          | 20.7744         | 9               |
+| rand1M          | 228.8995         | 155.8379        | 9               |
+| micro2M         | 443.0703         | 297.0808        | 9               |
+--------------------------------------------------------------------------
+|                                    | Total score:    | 72/72           |
+--------------------------------------------------------------------------
