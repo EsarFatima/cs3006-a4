@@ -389,7 +389,7 @@ shadePixelCached(
     float3 p,
     float rad,
     float3 rgb,
-    float4* imagePtr) {
+    float4& pixelColor) {
 
     float diffX = p.x - pixelCenter.x;
     float diffY = p.y - pixelCenter.y;
@@ -402,16 +402,14 @@ shadePixelCached(
 
     float alpha = 0.5f;
     float oneMinusAlpha = 1.f - alpha;
-
-    float4 existingColor = *imagePtr;
     float4 newColor;
 
-    newColor.x = alpha * rgb.x + oneMinusAlpha * existingColor.x;
-    newColor.y = alpha * rgb.y + oneMinusAlpha * existingColor.y;
-    newColor.z = alpha * rgb.z + oneMinusAlpha * existingColor.z;
-    newColor.w = alpha + existingColor.w;
+    newColor.x = alpha * rgb.x + oneMinusAlpha * pixelColor.x;
+    newColor.y = alpha * rgb.y + oneMinusAlpha * pixelColor.y;
+    newColor.z = alpha * rgb.z + oneMinusAlpha * pixelColor.z;
+    newColor.w = alpha + pixelColor.w;
 
-    *imagePtr = newColor;
+    pixelColor = newColor;
 }
 
 
@@ -437,6 +435,9 @@ __global__ void kernelRenderRGBFast() {
         &cuConstRendererParams.imageData[4 * pixelIndex]
     );
 
+    // Accumulate all three circles in a register.
+    float4 pixelColor = *imagePtr;
+
     // Preserve the original circle order for alpha blending.
     #pragma unroll
     for (int i = 0; i < 3; i++) {
@@ -458,9 +459,11 @@ __global__ void kernelRenderRGBFast() {
             position,
             radiusSquared,
             color,
-            imagePtr
+            pixelColor
         );
     }
+
+    *imagePtr = pixelColor;
 }
 
 // kernelRenderCircles -- (CUDA device code)
@@ -775,6 +778,11 @@ __global__ void kernelRenderPixels(
         );
     }
 
+    float4 pixelColor;
+    if (validPixel && !snowScene) {
+        pixelColor = *imagePtr;
+    }
+
     // Shared cache for the circles processed by this tile.
     __shared__ int sharedCircleIndices[256];
     __shared__ float3 sharedPositions[256];
@@ -833,7 +841,7 @@ __global__ void kernelRenderPixels(
                         sharedPositions[i],
                         sharedRadiusSquared[i],
                         sharedColors[i],
-                        imagePtr
+                        pixelColor
                     );
                 }
             }
@@ -841,6 +849,10 @@ __global__ void kernelRenderPixels(
 
         // Ensure all threads finish reading before the next batch loads.
         __syncthreads();
+    }
+
+    if (validPixel && !snowScene) {
+        *imagePtr = pixelColor;
     }
 }
 
