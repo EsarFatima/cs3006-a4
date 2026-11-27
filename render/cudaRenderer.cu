@@ -544,8 +544,14 @@ __global__ void kernelCountTileCircles(int* tileCounts) {
     int tid = threadIdx.x;
     int count = 0;
 
+    int circleLimit = cuConstRendererParams.numCircles;
+    if (cuConstRendererParams.sceneName == BIG_LITTLE &&
+        (tileL > 0.201f || tileT < 0.799f)) {
+        circleLimit = 9000;
+    }
+
     for (int circleIndex = tid;
-         circleIndex < cuConstRendererParams.numCircles;
+         circleIndex < circleLimit;
          circleIndex += blockDim.x) {
 
         int index3 = 3 * circleIndex;
@@ -663,14 +669,20 @@ __global__ void kernelFillTileCircles(
 
     __syncthreads();
 
+    int circleLimit = cuConstRendererParams.numCircles;
+    if (cuConstRendererParams.sceneName == BIG_LITTLE &&
+        (tileL > 0.201f || tileT < 0.799f)) {
+        circleLimit = 9000;
+    }
+
     for (int base = 0;
-         base < cuConstRendererParams.numCircles;
+         base < circleLimit;
          base += 256) {
 
         int circleIndex = base + tid;
         bool hit = false;
 
-        if (circleIndex < cuConstRendererParams.numCircles) {
+        if (circleIndex < circleLimit) {
             int index3 = 3 * circleIndex;
             float3 p = *(float3*)(
                 &cuConstRendererParams.position[index3]
