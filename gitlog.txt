@@ -1,0 +1,19 @@
+6896209 (HEAD -> renderer-optimization, tag: submission, origin/renderer-optimization) Add final correctness sweep and sanitizer evidence
+e841057 Add scan and find_repeats checker results
+27ef7ba Add final CUDA renderer checker results (72/72)
+bfd675b (origin/main, origin/HEAD) Merge pull request #2 from EsarFatima/renderer-optimization
+58e97ec Save verified 71/72 CUDA renderer with register accumulation
+b77880f Merge pull request #1 from EsarFatima/renderer-optimization
+0546c02 Optimize biglittle scene to reach 71/72
+a7d97c2 Optimize RGB scene rendering to reach 70/72
+62f01d6 (tag: pre-opt-67) Parallelize tile circle counting
+86fa37a Reuse tile circle buffer across frames
+81ef178 Optimize tile offsets with parallel Blelloch scan
+d9c038f (tag: correctbaseline, tag: correct-baseline) Implement correct CUDA tile-based circle renderer
+76ff159 Implement CUDA find_repeats using exclusive scan
+4577b22 Implement exclusive_scan; fix int overflow in thread-to-index mapping above 2^23 (illegal access found via cudaCheck)
+1a843a2 SAXPY: wrap CUDA calls in cudaCheck error-check macro
+5f24086 Implement SAXPY host code: malloc, memcpy, kernel-only and overall timers
+12b9345 Record Colab T4 machine details for the Machine Declaration
+17ff861 Add environment check script and Colab T4 output
+8f4123c Initial commit: unmodified CS149 asst3 starter code
