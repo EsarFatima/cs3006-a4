@@ -1,9 +1,9 @@
-6896209 (HEAD -> renderer-optimization, tag: submission, origin/renderer-optimization) Add final correctness sweep and sanitizer evidence
+d5ba04d (HEAD -> renderer-optimization) Add final assignment report
+24f562a (tag: submission, origin/renderer-optimization) Add final Git history for submission
+6896209 Add final correctness sweep and sanitizer evidence
 e841057 Add scan and find_repeats checker results
 27ef7ba Add final CUDA renderer checker results (72/72)
-bfd675b (origin/main, origin/HEAD) Merge pull request #2 from EsarFatima/renderer-optimization
 58e97ec Save verified 71/72 CUDA renderer with register accumulation
-b77880f Merge pull request #1 from EsarFatima/renderer-optimization
 0546c02 Optimize biglittle scene to reach 71/72
 a7d97c2 Optimize RGB scene rendering to reach 70/72
 62f01d6 (tag: pre-opt-67) Parallelize tile circle counting
