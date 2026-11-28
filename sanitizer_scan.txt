@@ -1,0 +1,32 @@
+========= COMPUTE-SANITIZER
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 1000003
+Student GPU time: 14.677 ms
+Scan outputs are correct!
+========= ERROR SUMMARY: 0 errors
+========= COMPUTE-SANITIZER
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 1000003
+Student GPU time: 23.297 ms
+Find_repeats outputs are correct!
+========= ERROR SUMMARY: 0 errors

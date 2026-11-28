@@ -1,0 +1,84 @@
+========= COMPUTE-SANITIZER
+Rendering to 256x256 image
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to logs/sanitizer_rand10k_xxx.ppm
+Copying image data from device
+Wrote image file logs/sanitizer_rand10k_0000.ppm
+Clear:    0.6266 ms
+Advance:  0.0213 ms
+Render:   58.1850 ms
+Total:    58.8330 ms
+File IO:  5.1250 ms
+
+Overall:  0.0640 sec (note units are seconds)
+========= ERROR SUMMARY: 0 errors
+========= COMPUTE-SANITIZER
+Rendering to 256x256 image
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to logs/sanitizer_biglittle_xxx.ppm
+Copying image data from device
+Wrote image file logs/sanitizer_biglittle_0000.ppm
+Clear:    0.5921 ms
+Advance:  0.0215 ms
+Render:   256.3161 ms
+Total:    256.9297 ms
+File IO:  5.1719 ms
+
+Overall:  0.2621 sec (note units are seconds)
+========= ERROR SUMMARY: 0 errors
+========= COMPUTE-SANITIZER
+Rendering to 256x256 image
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to logs/racecheck_rand10k_xxx.ppm
+Copying image data from device
+Wrote image file logs/racecheck_rand10k_0000.ppm
+Clear:    8.9499 ms
+Advance:  0.0100 ms
+Render:   4808.6546 ms
+Total:    4817.6145 ms
+File IO:  5.7865 ms
+
+Overall:  4.8234 sec (note units are seconds)
+========= RACECHECK SUMMARY: 0 hazards displayed (0 errors, 0 warnings)

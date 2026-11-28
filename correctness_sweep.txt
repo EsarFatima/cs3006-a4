@@ -1,0 +1,5619 @@
+========================================
+SCAN AND FIND_REPEATS CORRECTNESS SWEEP
+========================================
+[SCAN] mode=scan input=ones n=1
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 1
+Student GPU time: 0.007 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=ones n=2
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 2
+Student GPU time: 0.015 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=ones n=3
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 3
+Student GPU time: 0.021 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=ones n=255
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 255
+Student GPU time: 0.056 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=ones n=256
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 256
+Student GPU time: 0.053 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=ones n=257
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 257
+Student GPU time: 0.063 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=ones n=1000
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 1000
+Student GPU time: 0.067 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=ones n=65536
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 65536
+Student GPU time: 0.126 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=ones n=1000003
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 1000003
+Student GPU time: 0.333 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=random n=1
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 1
+Student GPU time: 0.007 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=random n=2
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 2
+Student GPU time: 0.014 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=random n=3
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 3
+Student GPU time: 0.020 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=random n=255
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 255
+Student GPU time: 0.055 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=random n=256
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 256
+Student GPU time: 0.054 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=random n=257
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 257
+Student GPU time: 0.062 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=random n=1000
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 1000
+Student GPU time: 0.064 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=random n=65536
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 65536
+Student GPU time: 0.116 ms
+Scan outputs are correct!
+[SCAN] mode=scan input=random n=1000003
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 1000003
+Student GPU time: 0.332 ms
+Scan outputs are correct!
+[SCAN] mode=find_repeats input=ones n=1
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 1
+Student GPU time: 0.001 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=ones n=2
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 2
+Student GPU time: 0.058 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=ones n=3
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 3
+Student GPU time: 0.068 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=ones n=255
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 255
+Student GPU time: 0.108 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=ones n=256
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 256
+Student GPU time: 0.102 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=ones n=257
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 257
+Student GPU time: 0.103 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=ones n=1000
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 1000
+Student GPU time: 0.121 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=ones n=65536
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 65536
+Student GPU time: 0.171 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=ones n=1000003
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 1000003
+Student GPU time: 0.902 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=random n=1
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 1
+Student GPU time: 0.001 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=random n=2
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 2
+Student GPU time: 0.057 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=random n=3
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 3
+Student GPU time: 0.068 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=random n=255
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 255
+Student GPU time: 0.107 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=random n=256
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 256
+Student GPU time: 0.106 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=random n=257
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 257
+Student GPU time: 0.104 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=random n=1000
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 1000
+Student GPU time: 0.119 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=random n=65536
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 65536
+Student GPU time: 0.170 ms
+Find_repeats outputs are correct!
+[SCAN] mode=find_repeats input=random n=1000003
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+Array size: 1000003
+Student GPU time: 0.935 ms
+Find_repeats outputs are correct!
+
+========================================
+CUDA RENDERER CORRECTNESS SWEEP
+========================================
+[RENDER] scene=rgb size=256 seed=0
+Rendering to 256x256 image
+Loaded scene with 3 circles
+Loaded scene with 3 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0489 ms
+Advance:  0.0016 ms
+Render:   0.0477 ms
+Total:    0.0982 ms
+File IO:  5.8748 ms
+
+Overall:  0.0078 sec (note units are seconds)
+[RENDER] scene=rgb size=256 seed=1
+Rendering to 256x256 image
+Loaded scene with 3 circles
+Loaded scene with 3 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0507 ms
+Advance:  0.0014 ms
+Render:   0.0301 ms
+Total:    0.0821 ms
+File IO:  5.2396 ms
+
+Overall:  0.0072 sec (note units are seconds)
+[RENDER] scene=rgb size=256 seed=2
+Rendering to 256x256 image
+Loaded scene with 3 circles
+Loaded scene with 3 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0482 ms
+Advance:  0.0014 ms
+Render:   0.0358 ms
+Total:    0.0855 ms
+File IO:  5.3014 ms
+
+Overall:  0.0073 sec (note units are seconds)
+[RENDER] scene=rgb size=512 seed=0
+Rendering to 512x512 image
+Loaded scene with 3 circles
+Loaded scene with 3 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0603 ms
+Advance:  0.0014 ms
+Render:   0.0560 ms
+Total:    0.1177 ms
+File IO:  20.1739 ms
+
+Overall:  0.0271 sec (note units are seconds)
+[RENDER] scene=rgb size=512 seed=1
+Rendering to 512x512 image
+Loaded scene with 3 circles
+Loaded scene with 3 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0729 ms
+Advance:  0.0015 ms
+Render:   0.0702 ms
+Total:    0.1446 ms
+File IO:  23.1191 ms
+
+Overall:  0.0312 sec (note units are seconds)
+[RENDER] scene=rgb size=512 seed=2
+Rendering to 512x512 image
+Loaded scene with 3 circles
+Loaded scene with 3 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0640 ms
+Advance:  0.0014 ms
+Render:   0.0598 ms
+Total:    0.1252 ms
+File IO:  20.6084 ms
+
+Overall:  0.0278 sec (note units are seconds)
+[RENDER] scene=rgb size=768 seed=0
+Rendering to 768x768 image
+Loaded scene with 3 circles
+Loaded scene with 3 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0904 ms
+Advance:  0.0015 ms
+Render:   0.1196 ms
+Total:    0.2115 ms
+File IO:  44.8767 ms
+
+Overall:  0.0609 sec (note units are seconds)
+[RENDER] scene=rgb size=768 seed=1
+Rendering to 768x768 image
+Loaded scene with 3 circles
+Loaded scene with 3 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0987 ms
+Advance:  0.0014 ms
+Render:   0.1352 ms
+Total:    0.2354 ms
+File IO:  46.0530 ms
+
+Overall:  0.0624 sec (note units are seconds)
+[RENDER] scene=rgb size=768 seed=2
+Rendering to 768x768 image
+Loaded scene with 3 circles
+Loaded scene with 3 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0879 ms
+Advance:  0.0014 ms
+Render:   0.1233 ms
+Total:    0.2127 ms
+File IO:  45.4562 ms
+
+Overall:  0.0614 sec (note units are seconds)
+[RENDER] scene=rgb size=1024 seed=0
+Rendering to 1024x1024 image
+Loaded scene with 3 circles
+Loaded scene with 3 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1299 ms
+Advance:  0.0016 ms
+Render:   0.1861 ms
+Total:    0.3176 ms
+File IO:  79.4999 ms
+
+Overall:  0.1080 sec (note units are seconds)
+[RENDER] scene=rgb size=1024 seed=1
+Rendering to 1024x1024 image
+Loaded scene with 3 circles
+Loaded scene with 3 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1260 ms
+Advance:  0.0014 ms
+Render:   0.1838 ms
+Total:    0.3111 ms
+File IO:  80.5712 ms
+
+Overall:  0.1090 sec (note units are seconds)
+[RENDER] scene=rgb size=1024 seed=2
+Rendering to 1024x1024 image
+Loaded scene with 3 circles
+Loaded scene with 3 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1252 ms
+Advance:  0.0014 ms
+Render:   0.1970 ms
+Total:    0.3236 ms
+File IO:  81.3784 ms
+
+Overall:  0.1099 sec (note units are seconds)
+[RENDER] scene=rgby size=256 seed=0
+Rendering to 256x256 image
+Loaded scene with 4 circles
+Loaded scene with 4 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0498 ms
+Advance:  0.0015 ms
+Render:   0.2316 ms
+Total:    0.2829 ms
+File IO:  5.6812 ms
+
+Overall:  0.0077 sec (note units are seconds)
+[RENDER] scene=rgby size=256 seed=1
+Rendering to 256x256 image
+Loaded scene with 4 circles
+Loaded scene with 4 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0483 ms
+Advance:  0.0014 ms
+Render:   0.2301 ms
+Total:    0.2797 ms
+File IO:  5.1680 ms
+
+Overall:  0.0071 sec (note units are seconds)
+[RENDER] scene=rgby size=256 seed=2
+Rendering to 256x256 image
+Loaded scene with 4 circles
+Loaded scene with 4 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0514 ms
+Advance:  0.0015 ms
+Render:   0.2249 ms
+Total:    0.2777 ms
+File IO:  5.3904 ms
+
+Overall:  0.0074 sec (note units are seconds)
+[RENDER] scene=rgby size=512 seed=0
+Rendering to 512x512 image
+Loaded scene with 4 circles
+Loaded scene with 4 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0667 ms
+Advance:  0.0015 ms
+Render:   0.2754 ms
+Total:    0.3436 ms
+File IO:  19.9007 ms
+
+Overall:  0.0270 sec (note units are seconds)
+[RENDER] scene=rgby size=512 seed=1
+Rendering to 512x512 image
+Loaded scene with 4 circles
+Loaded scene with 4 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0651 ms
+Advance:  0.0014 ms
+Render:   0.2786 ms
+Total:    0.3451 ms
+File IO:  20.0723 ms
+
+Overall:  0.0270 sec (note units are seconds)
+[RENDER] scene=rgby size=512 seed=2
+Rendering to 512x512 image
+Loaded scene with 4 circles
+Loaded scene with 4 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0612 ms
+Advance:  0.0014 ms
+Render:   0.2884 ms
+Total:    0.3510 ms
+File IO:  20.1309 ms
+
+Overall:  0.0270 sec (note units are seconds)
+[RENDER] scene=rgby size=768 seed=0
+Rendering to 768x768 image
+Loaded scene with 4 circles
+Loaded scene with 4 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1061 ms
+Advance:  0.0014 ms
+Render:   0.3605 ms
+Total:    0.4680 ms
+File IO:  46.1533 ms
+
+Overall:  0.0618 sec (note units are seconds)
+[RENDER] scene=rgby size=768 seed=1
+Rendering to 768x768 image
+Loaded scene with 4 circles
+Loaded scene with 4 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0852 ms
+Advance:  0.0014 ms
+Render:   0.3704 ms
+Total:    0.4570 ms
+File IO:  45.1133 ms
+
+Overall:  0.0600 sec (note units are seconds)
+[RENDER] scene=rgby size=768 seed=2
+Rendering to 768x768 image
+Loaded scene with 4 circles
+Loaded scene with 4 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0931 ms
+Advance:  0.0014 ms
+Render:   0.3853 ms
+Total:    0.4799 ms
+File IO:  46.3057 ms
+
+Overall:  0.0617 sec (note units are seconds)
+[RENDER] scene=rgby size=1024 seed=0
+Rendering to 1024x1024 image
+Loaded scene with 4 circles
+Loaded scene with 4 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1351 ms
+Advance:  0.0014 ms
+Render:   0.5069 ms
+Total:    0.6433 ms
+File IO:  80.2687 ms
+
+Overall:  0.1079 sec (note units are seconds)
+[RENDER] scene=rgby size=1024 seed=1
+Rendering to 1024x1024 image
+Loaded scene with 4 circles
+Loaded scene with 4 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1246 ms
+Advance:  0.0018 ms
+Render:   0.5356 ms
+Total:    0.6620 ms
+File IO:  79.9459 ms
+
+Overall:  0.1074 sec (note units are seconds)
+[RENDER] scene=rgby size=1024 seed=2
+Rendering to 1024x1024 image
+Loaded scene with 4 circles
+Loaded scene with 4 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1275 ms
+Advance:  0.0017 ms
+Render:   0.5201 ms
+Total:    0.6493 ms
+File IO:  83.9389 ms
+
+Overall:  0.1106 sec (note units are seconds)
+[RENDER] scene=rand10k size=256 seed=0
+Rendering to 256x256 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0473 ms
+Advance:  0.0013 ms
+Render:   0.6076 ms
+Total:    0.6562 ms
+File IO:  5.8640 ms
+
+Overall:  0.0410 sec (note units are seconds)
+[RENDER] scene=rand10k size=256 seed=1
+Rendering to 256x256 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0466 ms
+Advance:  0.0014 ms
+Render:   0.6150 ms
+Total:    0.6630 ms
+File IO:  5.3093 ms
+
+Overall:  0.0404 sec (note units are seconds)
+[RENDER] scene=rand10k size=256 seed=2
+Rendering to 256x256 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0461 ms
+Advance:  0.0014 ms
+Render:   0.5776 ms
+Total:    0.6251 ms
+File IO:  6.0651 ms
+
+Overall:  0.0469 sec (note units are seconds)
+[RENDER] scene=rand10k size=512 seed=0
+Rendering to 512x512 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0641 ms
+Advance:  0.0013 ms
+Render:   1.2366 ms
+Total:    1.3020 ms
+File IO:  20.3683 ms
+
+Overall:  0.1454 sec (note units are seconds)
+[RENDER] scene=rand10k size=512 seed=1
+Rendering to 512x512 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0645 ms
+Advance:  0.0014 ms
+Render:   1.2378 ms
+Total:    1.3037 ms
+File IO:  20.0834 ms
+
+Overall:  0.1436 sec (note units are seconds)
+[RENDER] scene=rand10k size=512 seed=2
+Rendering to 512x512 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0729 ms
+Advance:  0.0016 ms
+Render:   1.3369 ms
+Total:    1.4115 ms
+File IO:  20.1424 ms
+
+Overall:  0.1488 sec (note units are seconds)
+[RENDER] scene=rand10k size=768 seed=0
+Rendering to 768x768 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1007 ms
+Advance:  0.0016 ms
+Render:   2.7669 ms
+Total:    2.8692 ms
+File IO:  45.6521 ms
+
+Overall:  0.3190 sec (note units are seconds)
+[RENDER] scene=rand10k size=768 seed=1
+Rendering to 768x768 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0957 ms
+Advance:  0.0014 ms
+Render:   2.5972 ms
+Total:    2.6944 ms
+File IO:  45.2315 ms
+
+Overall:  0.3109 sec (note units are seconds)
+[RENDER] scene=rand10k size=768 seed=2
+Rendering to 768x768 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0905 ms
+Advance:  0.0014 ms
+Render:   2.6707 ms
+Total:    2.7625 ms
+File IO:  45.1703 ms
+
+Overall:  0.3243 sec (note units are seconds)
+[RENDER] scene=rand10k size=1024 seed=0
+Rendering to 1024x1024 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1284 ms
+Advance:  0.0014 ms
+Render:   4.9213 ms
+Total:    5.0511 ms
+File IO:  80.7839 ms
+
+Overall:  0.5665 sec (note units are seconds)
+[RENDER] scene=rand10k size=1024 seed=1
+Rendering to 1024x1024 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1311 ms
+Advance:  0.0015 ms
+Render:   4.9101 ms
+Total:    5.0427 ms
+File IO:  80.1951 ms
+
+Overall:  0.5622 sec (note units are seconds)
+[RENDER] scene=rand10k size=1024 seed=2
+Rendering to 1024x1024 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1281 ms
+Advance:  0.0014 ms
+Render:   4.9418 ms
+Total:    5.0713 ms
+File IO:  79.8094 ms
+
+Overall:  0.5605 sec (note units are seconds)
+[RENDER] scene=rand100k size=256 seed=0
+Rendering to 256x256 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0711 ms
+Advance:  0.0014 ms
+Render:   4.4015 ms
+Total:    4.4741 ms
+File IO:  6.1350 ms
+
+Overall:  0.3642 sec (note units are seconds)
+[RENDER] scene=rand100k size=256 seed=1
+Rendering to 256x256 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0454 ms
+Advance:  0.0014 ms
+Render:   4.1670 ms
+Total:    4.2138 ms
+File IO:  5.4810 ms
+
+Overall:  0.3392 sec (note units are seconds)
+[RENDER] scene=rand100k size=256 seed=2
+Rendering to 256x256 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0466 ms
+Advance:  0.0014 ms
+Render:   4.4347 ms
+Total:    4.4827 ms
+File IO:  5.2563 ms
+
+Overall:  0.3602 sec (note units are seconds)
+[RENDER] scene=rand100k size=512 seed=0
+Rendering to 512x512 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0576 ms
+Advance:  0.0016 ms
+Render:   14.7096 ms
+Total:    14.7688 ms
+File IO:  21.5582 ms
+
+Overall:  1.2148 sec (note units are seconds)
+[RENDER] scene=rand100k size=512 seed=1
+Rendering to 512x512 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0582 ms
+Advance:  0.0013 ms
+Render:   14.6870 ms
+Total:    14.7465 ms
+File IO:  20.2923 ms
+
+Overall:  1.2089 sec (note units are seconds)
+[RENDER] scene=rand100k size=512 seed=2
+Rendering to 512x512 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0698 ms
+Advance:  0.0013 ms
+Render:   14.6648 ms
+Total:    14.7358 ms
+File IO:  20.7097 ms
+
+Overall:  1.1893 sec (note units are seconds)
+[RENDER] scene=rand100k size=768 seed=0
+Rendering to 768x768 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0903 ms
+Advance:  0.0014 ms
+Render:   29.5325 ms
+Total:    29.6242 ms
+File IO:  46.2192 ms
+
+Overall:  2.7153 sec (note units are seconds)
+[RENDER] scene=rand100k size=768 seed=1
+Rendering to 768x768 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0883 ms
+Advance:  0.0014 ms
+Render:   29.4913 ms
+Total:    29.5810 ms
+File IO:  45.0509 ms
+
+Overall:  2.6297 sec (note units are seconds)
+[RENDER] scene=rand100k size=768 seed=2
+Rendering to 768x768 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0892 ms
+Advance:  0.0014 ms
+Render:   29.5964 ms
+Total:    29.6869 ms
+File IO:  45.0010 ms
+
+Overall:  2.6940 sec (note units are seconds)
+[RENDER] scene=rand100k size=1024 seed=0
+Rendering to 1024x1024 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1298 ms
+Advance:  0.0014 ms
+Render:   49.7404 ms
+Total:    49.8716 ms
+File IO:  79.5655 ms
+
+Overall:  4.7867 sec (note units are seconds)
+[RENDER] scene=rand100k size=1024 seed=1
+Rendering to 1024x1024 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1210 ms
+Advance:  0.0014 ms
+Render:   49.7231 ms
+Total:    49.8455 ms
+File IO:  80.7676 ms
+
+Overall:  4.6408 sec (note units are seconds)
+[RENDER] scene=rand100k size=1024 seed=2
+Rendering to 1024x1024 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1255 ms
+Advance:  0.0013 ms
+Render:   49.7286 ms
+Total:    49.8555 ms
+File IO:  81.9126 ms
+
+Overall:  4.7766 sec (note units are seconds)
+[RENDER] scene=rand1M size=256 seed=0
+Rendering to 256x256 image
+Loaded scene with 1000000 circles
+Loaded scene with 1000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0468 ms
+Advance:  0.0014 ms
+Render:   24.9629 ms
+Total:    25.0111 ms
+File IO:  5.8263 ms
+
+Overall:  0.2836 sec (note units are seconds)
+[RENDER] scene=rand1M size=256 seed=1
+Rendering to 256x256 image
+Loaded scene with 1000000 circles
+Loaded scene with 1000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0547 ms
+Advance:  0.0015 ms
+Render:   26.3261 ms
+Total:    26.3824 ms
+File IO:  5.1579 ms
+
+Overall:  0.2869 sec (note units are seconds)
+[RENDER] scene=rand1M size=256 seed=2
+Rendering to 256x256 image
+Loaded scene with 1000000 circles
+Loaded scene with 1000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0469 ms
+Advance:  0.0014 ms
+Render:   24.7903 ms
+Total:    24.8386 ms
+File IO:  5.4413 ms
+
+Overall:  0.2889 sec (note units are seconds)
+[RENDER] scene=rand1M size=512 seed=0
+Rendering to 512x512 image
+Loaded scene with 1000000 circles
+Loaded scene with 1000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0608 ms
+Advance:  0.0014 ms
+Render:   91.3233 ms
+Total:    91.3855 ms
+File IO:  20.3812 ms
+
+Overall:  0.9692 sec (note units are seconds)
+[RENDER] scene=rand1M size=512 seed=1
+Rendering to 512x512 image
+Loaded scene with 1000000 circles
+Loaded scene with 1000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0604 ms
+Advance:  0.0014 ms
+Render:   91.3184 ms
+Total:    91.3802 ms
+File IO:  20.9893 ms
+
+Overall:  1.0069 sec (note units are seconds)
+[RENDER] scene=rand1M size=512 seed=2
+Rendering to 512x512 image
+Loaded scene with 1000000 circles
+Loaded scene with 1000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0620 ms
+Advance:  0.0015 ms
+Render:   91.2679 ms
+Total:    91.3315 ms
+File IO:  20.9988 ms
+
+Overall:  0.9770 sec (note units are seconds)
+[RENDER] scene=rand1M size=768 seed=0
+Rendering to 768x768 image
+Loaded scene with 1000000 circles
+Loaded scene with 1000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0857 ms
+Advance:  0.0014 ms
+Render:   170.2918 ms
+Total:    170.3789 ms
+File IO:  46.3408 ms
+
+Overall:  2.3070 sec (note units are seconds)
+[RENDER] scene=rand1M size=768 seed=1
+Rendering to 768x768 image
+Loaded scene with 1000000 circles
+Loaded scene with 1000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0911 ms
+Advance:  0.0014 ms
+Render:   174.7937 ms
+Total:    174.8862 ms
+File IO:  48.0909 ms
+
+Overall:  2.2327 sec (note units are seconds)
+[RENDER] scene=rand1M size=768 seed=2
+Rendering to 768x768 image
+Loaded scene with 1000000 circles
+Loaded scene with 1000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1024 ms
+Advance:  0.0014 ms
+Render:   171.5958 ms
+Total:    171.6996 ms
+File IO:  45.5876 ms
+
+Overall:  2.3080 sec (note units are seconds)
+[RENDER] scene=rand1M size=1024 seed=0
+Rendering to 1024x1024 image
+Loaded scene with 1000000 circles
+Loaded scene with 1000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1256 ms
+Advance:  0.0018 ms
+Render:   252.8096 ms
+Total:    252.9370 ms
+File IO:  83.6494 ms
+
+Overall:  3.7076 sec (note units are seconds)
+[RENDER] scene=rand1M size=1024 seed=1
+Rendering to 1024x1024 image
+Loaded scene with 1000000 circles
+Loaded scene with 1000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1211 ms
+Advance:  0.0016 ms
+Render:   274.9173 ms
+Total:    275.0399 ms
+File IO:  83.1354 ms
+
+Overall:  3.8684 sec (note units are seconds)
+[RENDER] scene=rand1M size=1024 seed=2
+Rendering to 1024x1024 image
+Loaded scene with 1000000 circles
+Loaded scene with 1000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1189 ms
+Advance:  0.0013 ms
+Render:   291.0002 ms
+Total:    291.1205 ms
+File IO:  80.1833 ms
+
+Overall:  3.8732 sec (note units are seconds)
+[RENDER] scene=micro2M size=256 seed=0
+Rendering to 256x256 image
+Loaded scene with 2000000 circles
+Loaded scene with 2000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0479 ms
+Advance:  0.0016 ms
+Render:   24.0151 ms
+Total:    24.0645 ms
+File IO:  5.5527 ms
+
+Overall:  0.0865 sec (note units are seconds)
+[RENDER] scene=micro2M size=256 seed=1
+Rendering to 256x256 image
+Loaded scene with 2000000 circles
+Loaded scene with 2000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0473 ms
+Advance:  0.0014 ms
+Render:   41.5209 ms
+Total:    41.5696 ms
+File IO:  5.1896 ms
+
+Overall:  0.1033 sec (note units are seconds)
+[RENDER] scene=micro2M size=256 seed=2
+Rendering to 256x256 image
+Loaded scene with 2000000 circles
+Loaded scene with 2000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0566 ms
+Advance:  0.0014 ms
+Render:   42.7495 ms
+Total:    42.8075 ms
+File IO:  5.3371 ms
+
+Overall:  0.1054 sec (note units are seconds)
+[RENDER] scene=micro2M size=512 seed=0
+Rendering to 512x512 image
+Loaded scene with 2000000 circles
+Loaded scene with 2000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0565 ms
+Advance:  0.0013 ms
+Render:   142.5650 ms
+Total:    142.6229 ms
+File IO:  20.0221 ms
+
+Overall:  0.2495 sec (note units are seconds)
+[RENDER] scene=micro2M size=512 seed=1
+Rendering to 512x512 image
+Loaded scene with 2000000 circles
+Loaded scene with 2000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0607 ms
+Advance:  0.0013 ms
+Render:   110.8298 ms
+Total:    110.8918 ms
+File IO:  19.9163 ms
+
+Overall:  0.2185 sec (note units are seconds)
+[RENDER] scene=micro2M size=512 seed=2
+Rendering to 512x512 image
+Loaded scene with 2000000 circles
+Loaded scene with 2000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0581 ms
+Advance:  0.0014 ms
+Render:   85.0110 ms
+Total:    85.0705 ms
+File IO:  22.4395 ms
+
+Overall:  0.1962 sec (note units are seconds)
+[RENDER] scene=micro2M size=768 seed=0
+Rendering to 768x768 image
+Loaded scene with 2000000 circles
+Loaded scene with 2000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0899 ms
+Advance:  0.0014 ms
+Render:   277.0516 ms
+Total:    277.1429 ms
+File IO:  45.6221 ms
+
+Overall:  0.4538 sec (note units are seconds)
+[RENDER] scene=micro2M size=768 seed=1
+Rendering to 768x768 image
+Loaded scene with 2000000 circles
+Loaded scene with 2000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1009 ms
+Advance:  0.0014 ms
+Render:   174.1652 ms
+Total:    174.2675 ms
+File IO:  46.1520 ms
+
+Overall:  0.3566 sec (note units are seconds)
+[RENDER] scene=micro2M size=768 seed=2
+Rendering to 768x768 image
+Loaded scene with 2000000 circles
+Loaded scene with 2000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0850 ms
+Advance:  0.0015 ms
+Render:   173.8580 ms
+Total:    173.9445 ms
+File IO:  46.0181 ms
+
+Overall:  0.3509 sec (note units are seconds)
+[RENDER] scene=micro2M size=1024 seed=0
+Rendering to 1024x1024 image
+Loaded scene with 2000000 circles
+Loaded scene with 2000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1235 ms
+Advance:  0.0014 ms
+Render:   297.8675 ms
+Total:    297.9923 ms
+File IO:  78.9128 ms
+
+Overall:  0.5737 sec (note units are seconds)
+[RENDER] scene=micro2M size=1024 seed=1
+Rendering to 1024x1024 image
+Loaded scene with 2000000 circles
+Loaded scene with 2000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1285 ms
+Advance:  0.0015 ms
+Render:   298.8202 ms
+Total:    298.9503 ms
+File IO:  81.8200 ms
+
+Overall:  0.5856 sec (note units are seconds)
+[RENDER] scene=micro2M size=1024 seed=2
+Rendering to 1024x1024 image
+Loaded scene with 2000000 circles
+Loaded scene with 2000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1214 ms
+Advance:  0.0014 ms
+Render:   299.8853 ms
+Total:    300.0081 ms
+File IO:  78.8939 ms
+
+Overall:  0.5812 sec (note units are seconds)
+[RENDER] scene=biglittle size=256 seed=0
+Rendering to 256x256 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0448 ms
+Advance:  0.0014 ms
+Render:   1.3703 ms
+Total:    1.4165 ms
+File IO:  5.7444 ms
+
+Overall:  0.4356 sec (note units are seconds)
+[RENDER] scene=biglittle size=256 seed=1
+Rendering to 256x256 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0432 ms
+Advance:  0.0014 ms
+Render:   1.3736 ms
+Total:    1.4181 ms
+File IO:  5.2255 ms
+
+Overall:  0.4417 sec (note units are seconds)
+[RENDER] scene=biglittle size=256 seed=2
+Rendering to 256x256 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0590 ms
+Advance:  0.0013 ms
+Render:   2.3790 ms
+Total:    2.4394 ms
+File IO:  5.4327 ms
+
+Overall:  0.4325 sec (note units are seconds)
+[RENDER] scene=biglittle size=512 seed=0
+Rendering to 512x512 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0649 ms
+Advance:  0.0014 ms
+Render:   9.1413 ms
+Total:    9.2076 ms
+File IO:  20.2142 ms
+
+Overall:  1.7216 sec (note units are seconds)
+[RENDER] scene=biglittle size=512 seed=1
+Rendering to 512x512 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0658 ms
+Advance:  0.0014 ms
+Render:   9.1287 ms
+Total:    9.1958 ms
+File IO:  22.2115 ms
+
+Overall:  1.7056 sec (note units are seconds)
+[RENDER] scene=biglittle size=512 seed=2
+Rendering to 512x512 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0648 ms
+Advance:  0.0014 ms
+Render:   9.0412 ms
+Total:    9.1075 ms
+File IO:  20.7148 ms
+
+Overall:  1.6731 sec (note units are seconds)
+[RENDER] scene=biglittle size=768 seed=0
+Rendering to 768x768 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+Mismatch detected at pixel [617][136], value = 0.460812, expected 0.701270 for color Red
+***************** Correctness check passed **************************
+Clear:    0.0894 ms
+Advance:  0.0014 ms
+Render:   18.9088 ms
+Total:    18.9996 ms
+File IO:  47.5565 ms
+
+Overall:  3.8429 sec (note units are seconds)
+[RENDER] scene=biglittle size=768 seed=1
+Rendering to 768x768 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+Mismatch detected at pixel [617][136], value = 0.460812, expected 0.701270 for color Red
+***************** Correctness check passed **************************
+Clear:    0.0941 ms
+Advance:  0.0015 ms
+Render:   18.9147 ms
+Total:    19.0103 ms
+File IO:  45.7857 ms
+
+Overall:  3.8419 sec (note units are seconds)
+[RENDER] scene=biglittle size=768 seed=2
+Rendering to 768x768 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0903 ms
+Advance:  0.0014 ms
+Render:   18.8949 ms
+Total:    18.9867 ms
+File IO:  46.5202 ms
+
+Overall:  3.8079 sec (note units are seconds)
+[RENDER] scene=biglittle size=1024 seed=0
+Rendering to 1024x1024 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1280 ms
+Advance:  0.0014 ms
+Render:   32.5092 ms
+Total:    32.6386 ms
+File IO:  80.2443 ms
+
+Overall:  6.7939 sec (note units are seconds)
+[RENDER] scene=biglittle size=1024 seed=1
+Rendering to 1024x1024 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1478 ms
+Advance:  0.0023 ms
+Render:   32.5266 ms
+Total:    32.6767 ms
+File IO:  81.4404 ms
+
+Overall:  6.8115 sec (note units are seconds)
+[RENDER] scene=biglittle size=1024 seed=2
+Rendering to 1024x1024 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1272 ms
+Advance:  0.0014 ms
+Render:   32.3931 ms
+Total:    32.5217 ms
+File IO:  80.0405 ms
+
+Overall:  6.6530 sec (note units are seconds)
+[RENDER] scene=littlebig size=256 seed=0
+Rendering to 256x256 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0481 ms
+Advance:  0.0014 ms
+Render:   2.5935 ms
+Total:    2.6431 ms
+File IO:  5.9565 ms
+
+Overall:  0.4389 sec (note units are seconds)
+[RENDER] scene=littlebig size=256 seed=1
+Rendering to 256x256 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0482 ms
+Advance:  0.0015 ms
+Render:   2.5027 ms
+Total:    2.5524 ms
+File IO:  6.0249 ms
+
+Overall:  0.4376 sec (note units are seconds)
+[RENDER] scene=littlebig size=256 seed=2
+Rendering to 256x256 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0464 ms
+Advance:  0.0013 ms
+Render:   2.6634 ms
+Total:    2.7111 ms
+File IO:  5.2312 ms
+
+Overall:  0.4336 sec (note units are seconds)
+[RENDER] scene=littlebig size=512 seed=0
+Rendering to 512x512 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0650 ms
+Advance:  0.0014 ms
+Render:   9.1375 ms
+Total:    9.2039 ms
+File IO:  22.7946 ms
+
+Overall:  1.6989 sec (note units are seconds)
+[RENDER] scene=littlebig size=512 seed=1
+Rendering to 512x512 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0650 ms
+Advance:  0.0016 ms
+Render:   9.1849 ms
+Total:    9.2516 ms
+File IO:  20.1214 ms
+
+Overall:  1.7036 sec (note units are seconds)
+[RENDER] scene=littlebig size=512 seed=2
+Rendering to 512x512 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0642 ms
+Advance:  0.0014 ms
+Render:   9.1369 ms
+Total:    9.2024 ms
+File IO:  20.1838 ms
+
+Overall:  1.7167 sec (note units are seconds)
+[RENDER] scene=littlebig size=768 seed=0
+Rendering to 768x768 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+Mismatch detected at pixel [617][136], value = 0.460812, expected 0.701270 for color Red
+***************** Correctness check passed **************************
+Clear:    0.0930 ms
+Advance:  0.0015 ms
+Render:   19.0880 ms
+Total:    19.1825 ms
+File IO:  44.9155 ms
+
+Overall:  3.8465 sec (note units are seconds)
+[RENDER] scene=littlebig size=768 seed=1
+Rendering to 768x768 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+Mismatch detected at pixel [617][136], value = 0.460812, expected 0.701270 for color Red
+***************** Correctness check passed **************************
+Clear:    0.0921 ms
+Advance:  0.0014 ms
+Render:   19.1186 ms
+Total:    19.2121 ms
+File IO:  47.5543 ms
+
+Overall:  3.8864 sec (note units are seconds)
+[RENDER] scene=littlebig size=768 seed=2
+Rendering to 768x768 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0984 ms
+Advance:  0.0013 ms
+Render:   19.0331 ms
+Total:    19.1328 ms
+File IO:  45.1138 ms
+
+Overall:  3.8947 sec (note units are seconds)
+[RENDER] scene=littlebig size=1024 seed=0
+Rendering to 1024x1024 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1382 ms
+Advance:  0.0016 ms
+Render:   32.7469 ms
+Total:    32.8867 ms
+File IO:  80.0256 ms
+
+Overall:  6.9065 sec (note units are seconds)
+[RENDER] scene=littlebig size=1024 seed=1
+Rendering to 1024x1024 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1303 ms
+Advance:  0.0018 ms
+Render:   32.7188 ms
+Total:    32.8509 ms
+File IO:  81.8737 ms
+
+Overall:  6.8268 sec (note units are seconds)
+[RENDER] scene=littlebig size=1024 seed=2
+Rendering to 1024x1024 image
+Loaded scene with 10000 circles
+Loaded scene with 10000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1289 ms
+Advance:  0.0014 ms
+Render:   32.6282 ms
+Total:    32.7585 ms
+File IO:  94.5632 ms
+
+Overall:  6.8211 sec (note units are seconds)
+[RENDER] scene=pattern size=256 seed=0
+Rendering to 256x256 image
+Loaded scene with 1217 circles
+Loaded scene with 1217 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0556 ms
+Advance:  0.0015 ms
+Render:   0.2977 ms
+Total:    0.3548 ms
+File IO:  5.8217 ms
+
+Overall:  0.0083 sec (note units are seconds)
+[RENDER] scene=pattern size=256 seed=1
+Rendering to 256x256 image
+Loaded scene with 1217 circles
+Loaded scene with 1217 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0494 ms
+Advance:  0.0014 ms
+Render:   0.2698 ms
+Total:    0.3206 ms
+File IO:  5.2184 ms
+
+Overall:  0.0077 sec (note units are seconds)
+[RENDER] scene=pattern size=256 seed=2
+Rendering to 256x256 image
+Loaded scene with 1217 circles
+Loaded scene with 1217 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0473 ms
+Advance:  0.0014 ms
+Render:   0.2398 ms
+Total:    0.2885 ms
+File IO:  6.4281 ms
+
+Overall:  0.0088 sec (note units are seconds)
+[RENDER] scene=pattern size=512 seed=0
+Rendering to 512x512 image
+Loaded scene with 1217 circles
+Loaded scene with 1217 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0643 ms
+Advance:  0.0017 ms
+Render:   0.3388 ms
+Total:    0.4047 ms
+File IO:  20.3280 ms
+
+Overall:  0.0292 sec (note units are seconds)
+[RENDER] scene=pattern size=512 seed=1
+Rendering to 512x512 image
+Loaded scene with 1217 circles
+Loaded scene with 1217 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0625 ms
+Advance:  0.0015 ms
+Render:   0.3498 ms
+Total:    0.4137 ms
+File IO:  21.5420 ms
+
+Overall:  0.0305 sec (note units are seconds)
+[RENDER] scene=pattern size=512 seed=2
+Rendering to 512x512 image
+Loaded scene with 1217 circles
+Loaded scene with 1217 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0621 ms
+Advance:  0.0014 ms
+Render:   0.3451 ms
+Total:    0.4086 ms
+File IO:  20.2173 ms
+
+Overall:  0.0288 sec (note units are seconds)
+[RENDER] scene=pattern size=768 seed=0
+Rendering to 768x768 image
+Loaded scene with 1217 circles
+Loaded scene with 1217 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0945 ms
+Advance:  0.0016 ms
+Render:   0.5314 ms
+Total:    0.6275 ms
+File IO:  45.5378 ms
+
+Overall:  0.0643 sec (note units are seconds)
+[RENDER] scene=pattern size=768 seed=1
+Rendering to 768x768 image
+Loaded scene with 1217 circles
+Loaded scene with 1217 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0908 ms
+Advance:  0.0014 ms
+Render:   0.5337 ms
+Total:    0.6259 ms
+File IO:  45.5812 ms
+
+Overall:  0.0665 sec (note units are seconds)
+[RENDER] scene=pattern size=768 seed=2
+Rendering to 768x768 image
+Loaded scene with 1217 circles
+Loaded scene with 1217 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1002 ms
+Advance:  0.0016 ms
+Render:   0.5339 ms
+Total:    0.6357 ms
+File IO:  50.4451 ms
+
+Overall:  0.0702 sec (note units are seconds)
+[RENDER] scene=pattern size=1024 seed=0
+Rendering to 1024x1024 image
+Loaded scene with 1217 circles
+Loaded scene with 1217 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1289 ms
+Advance:  0.0017 ms
+Render:   0.8012 ms
+Total:    0.9318 ms
+File IO:  80.9312 ms
+
+Overall:  0.1160 sec (note units are seconds)
+[RENDER] scene=pattern size=1024 seed=1
+Rendering to 1024x1024 image
+Loaded scene with 1217 circles
+Loaded scene with 1217 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1247 ms
+Advance:  0.0014 ms
+Render:   0.8084 ms
+Total:    0.9345 ms
+File IO:  79.7908 ms
+
+Overall:  0.1141 sec (note units are seconds)
+[RENDER] scene=pattern size=1024 seed=2
+Rendering to 1024x1024 image
+Loaded scene with 1217 circles
+Loaded scene with 1217 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1263 ms
+Advance:  0.0015 ms
+Render:   0.7784 ms
+Total:    0.9062 ms
+File IO:  80.9065 ms
+
+Overall:  0.1157 sec (note units are seconds)
+[RENDER] scene=snowsingle size=256 seed=0
+Rendering to 256x256 image
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0513 ms
+Advance:  0.0016 ms
+Render:   2.4173 ms
+Total:    2.4702 ms
+File IO:  6.7970 ms
+
+Overall:  0.0333 sec (note units are seconds)
+[RENDER] scene=snowsingle size=256 seed=1
+Rendering to 256x256 image
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0505 ms
+Advance:  0.0014 ms
+Render:   1.9917 ms
+Total:    2.0436 ms
+File IO:  5.1739 ms
+
+Overall:  0.0312 sec (note units are seconds)
+[RENDER] scene=snowsingle size=256 seed=2
+Rendering to 256x256 image
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0567 ms
+Advance:  0.0016 ms
+Render:   2.0002 ms
+Total:    2.0585 ms
+File IO:  5.2730 ms
+
+Overall:  0.0313 sec (note units are seconds)
+[RENDER] scene=snowsingle size=512 seed=0
+Rendering to 512x512 image
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0627 ms
+Advance:  0.0014 ms
+Render:   6.3354 ms
+Total:    6.3995 ms
+File IO:  22.2339 ms
+
+Overall:  0.1201 sec (note units are seconds)
+[RENDER] scene=snowsingle size=512 seed=1
+Rendering to 512x512 image
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0730 ms
+Advance:  0.0034 ms
+Render:   6.9907 ms
+Total:    7.0671 ms
+File IO:  21.0242 ms
+
+Overall:  0.1192 sec (note units are seconds)
+[RENDER] scene=snowsingle size=512 seed=2
+Rendering to 512x512 image
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0623 ms
+Advance:  0.0014 ms
+Render:   6.0934 ms
+Total:    6.1571 ms
+File IO:  19.9838 ms
+
+Overall:  0.1172 sec (note units are seconds)
+[RENDER] scene=snowsingle size=768 seed=0
+Rendering to 768x768 image
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0903 ms
+Advance:  0.0015 ms
+Render:   14.4351 ms
+Total:    14.5269 ms
+File IO:  44.5492 ms
+
+Overall:  0.2636 sec (note units are seconds)
+[RENDER] scene=snowsingle size=768 seed=1
+Rendering to 768x768 image
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0961 ms
+Advance:  0.0014 ms
+Render:   15.6890 ms
+Total:    15.7865 ms
+File IO:  44.5826 ms
+
+Overall:  0.2648 sec (note units are seconds)
+[RENDER] scene=snowsingle size=768 seed=2
+Rendering to 768x768 image
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0893 ms
+Advance:  0.0014 ms
+Render:   13.4127 ms
+Total:    13.5034 ms
+File IO:  44.7810 ms
+
+Overall:  0.2615 sec (note units are seconds)
+[RENDER] scene=snowsingle size=1024 seed=0
+Rendering to 1024x1024 image
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1372 ms
+Advance:  0.0015 ms
+Render:   23.8435 ms
+Total:    23.9822 ms
+File IO:  79.9665 ms
+
+Overall:  0.4665 sec (note units are seconds)
+[RENDER] scene=snowsingle size=1024 seed=1
+Rendering to 1024x1024 image
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1261 ms
+Advance:  0.0014 ms
+Render:   26.8996 ms
+Total:    27.0270 ms
+File IO:  81.5184 ms
+
+Overall:  0.4689 sec (note units are seconds)
+[RENDER] scene=snowsingle size=1024 seed=2
+Rendering to 1024x1024 image
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1301 ms
+Advance:  0.0015 ms
+Render:   28.8282 ms
+Total:    28.9597 ms
+File IO:  81.7758 ms
+
+Overall:  0.4774 sec (note units are seconds)
+[RENDER] scene=snow size=256 seed=0
+Rendering to 256x256 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0524 ms
+Advance:  0.1213 ms
+Render:   1.9489 ms
+Total:    2.1226 ms
+File IO:  5.8119 ms
+
+Overall:  0.0116 sec (note units are seconds)
+[RENDER] scene=snow size=256 seed=1
+Rendering to 256x256 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0498 ms
+Advance:  0.1024 ms
+Render:   1.4766 ms
+Total:    1.6288 ms
+File IO:  5.2637 ms
+
+Overall:  0.0105 sec (note units are seconds)
+[RENDER] scene=snow size=256 seed=2
+Rendering to 256x256 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0495 ms
+Advance:  0.1016 ms
+Render:   1.4702 ms
+Total:    1.6213 ms
+File IO:  5.3104 ms
+
+Overall:  0.0106 sec (note units are seconds)
+[RENDER] scene=snow size=512 seed=0
+Rendering to 512x512 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0665 ms
+Advance:  0.1030 ms
+Render:   4.4651 ms
+Total:    4.6345 ms
+File IO:  20.7821 ms
+
+Overall:  0.0340 sec (note units are seconds)
+[RENDER] scene=snow size=512 seed=1
+Rendering to 512x512 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0575 ms
+Advance:  0.1039 ms
+Render:   4.4678 ms
+Total:    4.6292 ms
+File IO:  20.5502 ms
+
+Overall:  0.0333 sec (note units are seconds)
+[RENDER] scene=snow size=512 seed=2
+Rendering to 512x512 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0605 ms
+Advance:  0.1032 ms
+Render:   4.4650 ms
+Total:    4.6287 ms
+File IO:  20.4265 ms
+
+Overall:  0.0330 sec (note units are seconds)
+[RENDER] scene=snow size=768 seed=0
+Rendering to 768x768 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0860 ms
+Advance:  0.0990 ms
+Render:   9.0801 ms
+Total:    9.2652 ms
+File IO:  46.1211 ms
+
+Overall:  0.0710 sec (note units are seconds)
+[RENDER] scene=snow size=768 seed=1
+Rendering to 768x768 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0860 ms
+Advance:  0.0985 ms
+Render:   9.0759 ms
+Total:    9.2604 ms
+File IO:  55.6852 ms
+
+Overall:  0.0807 sec (note units are seconds)
+[RENDER] scene=snow size=768 seed=2
+Rendering to 768x768 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0848 ms
+Advance:  0.1006 ms
+Render:   9.0859 ms
+Total:    9.2712 ms
+File IO:  45.2892 ms
+
+Overall:  0.0704 sec (note units are seconds)
+[RENDER] scene=snow size=1024 seed=0
+Rendering to 1024x1024 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1373 ms
+Advance:  0.1122 ms
+Render:   19.2879 ms
+Total:    19.5374 ms
+File IO:  80.1599 ms
+
+Overall:  0.1267 sec (note units are seconds)
+[RENDER] scene=snow size=1024 seed=1
+Rendering to 1024x1024 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1224 ms
+Advance:  0.1141 ms
+Render:   20.5601 ms
+Total:    20.7967 ms
+File IO:  81.5775 ms
+
+Overall:  0.1290 sec (note units are seconds)
+[RENDER] scene=snow size=1024 seed=2
+Rendering to 1024x1024 image
+Loaded scene with 100000 circles
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1249 ms
+Advance:  0.1211 ms
+Render:   21.9790 ms
+Total:    22.2250 ms
+File IO:  80.2339 ms
+
+Overall:  0.1289 sec (note units are seconds)
+[RENDER] scene=bouncingballs size=256 seed=0
+Rendering to 256x256 image
+Loaded scene with 10 circles
+Loaded scene with 10 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0534 ms
+Advance:  0.0199 ms
+Render:   0.2117 ms
+Total:    0.2849 ms
+File IO:  5.7628 ms
+
+Overall:  0.0077 sec (note units are seconds)
+[RENDER] scene=bouncingballs size=256 seed=1
+Rendering to 256x256 image
+Loaded scene with 10 circles
+Loaded scene with 10 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0510 ms
+Advance:  0.0191 ms
+Render:   0.2161 ms
+Total:    0.2862 ms
+File IO:  5.7255 ms
+
+Overall:  0.0076 sec (note units are seconds)
+[RENDER] scene=bouncingballs size=256 seed=2
+Rendering to 256x256 image
+Loaded scene with 10 circles
+Loaded scene with 10 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0913 ms
+Advance:  0.0225 ms
+Render:   0.2156 ms
+Total:    0.3295 ms
+File IO:  5.2237 ms
+
+Overall:  0.0073 sec (note units are seconds)
+[RENDER] scene=bouncingballs size=512 seed=0
+Rendering to 512x512 image
+Loaded scene with 10 circles
+Loaded scene with 10 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0643 ms
+Advance:  0.0290 ms
+Render:   0.2564 ms
+Total:    0.3496 ms
+File IO:  20.6178 ms
+
+Overall:  0.0272 sec (note units are seconds)
+[RENDER] scene=bouncingballs size=512 seed=1
+Rendering to 512x512 image
+Loaded scene with 10 circles
+Loaded scene with 10 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0671 ms
+Advance:  0.0233 ms
+Render:   0.2542 ms
+Total:    0.3446 ms
+File IO:  19.9975 ms
+
+Overall:  0.0266 sec (note units are seconds)
+[RENDER] scene=bouncingballs size=512 seed=2
+Rendering to 512x512 image
+Loaded scene with 10 circles
+Loaded scene with 10 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0631 ms
+Advance:  0.0230 ms
+Render:   0.2554 ms
+Total:    0.3414 ms
+File IO:  21.3065 ms
+
+Overall:  0.0279 sec (note units are seconds)
+[RENDER] scene=bouncingballs size=768 seed=0
+Rendering to 768x768 image
+Loaded scene with 10 circles
+Loaded scene with 10 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0895 ms
+Advance:  0.0192 ms
+Render:   0.3573 ms
+Total:    0.4659 ms
+File IO:  45.3168 ms
+
+Overall:  0.0593 sec (note units are seconds)
+[RENDER] scene=bouncingballs size=768 seed=1
+Rendering to 768x768 image
+Loaded scene with 10 circles
+Loaded scene with 10 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0959 ms
+Advance:  0.0196 ms
+Render:   0.3626 ms
+Total:    0.4781 ms
+File IO:  44.7955 ms
+
+Overall:  0.0589 sec (note units are seconds)
+[RENDER] scene=bouncingballs size=768 seed=2
+Rendering to 768x768 image
+Loaded scene with 10 circles
+Loaded scene with 10 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0907 ms
+Advance:  0.0286 ms
+Render:   0.3647 ms
+Total:    0.4840 ms
+File IO:  45.2708 ms
+
+Overall:  0.0595 sec (note units are seconds)
+[RENDER] scene=bouncingballs size=1024 seed=0
+Rendering to 1024x1024 image
+Loaded scene with 10 circles
+Loaded scene with 10 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1295 ms
+Advance:  0.0210 ms
+Render:   0.5213 ms
+Total:    0.6717 ms
+File IO:  83.2448 ms
+
+Overall:  0.1086 sec (note units are seconds)
+[RENDER] scene=bouncingballs size=1024 seed=1
+Rendering to 1024x1024 image
+Loaded scene with 10 circles
+Loaded scene with 10 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1267 ms
+Advance:  0.0206 ms
+Render:   0.5115 ms
+Total:    0.6588 ms
+File IO:  79.7334 ms
+
+Overall:  0.1046 sec (note units are seconds)
+[RENDER] scene=bouncingballs size=1024 seed=2
+Rendering to 1024x1024 image
+Loaded scene with 10 circles
+Loaded scene with 10 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1305 ms
+Advance:  0.0205 ms
+Render:   0.5402 ms
+Total:    0.6913 ms
+File IO:  82.3593 ms
+
+Overall:  0.1076 sec (note units are seconds)
+[RENDER] scene=hypnosis size=256 seed=0
+Rendering to 256x256 image
+Loaded scene with 25 circles
+Loaded scene with 25 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0469 ms
+Advance:  0.0231 ms
+Render:   0.2458 ms
+Total:    0.3158 ms
+File IO:  5.7525 ms
+
+Overall:  0.0099 sec (note units are seconds)
+[RENDER] scene=hypnosis size=256 seed=1
+Rendering to 256x256 image
+Loaded scene with 25 circles
+Loaded scene with 25 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0481 ms
+Advance:  0.0232 ms
+Render:   0.2594 ms
+Total:    0.3307 ms
+File IO:  5.2246 ms
+
+Overall:  0.0094 sec (note units are seconds)
+[RENDER] scene=hypnosis size=256 seed=2
+Rendering to 256x256 image
+Loaded scene with 25 circles
+Loaded scene with 25 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0450 ms
+Advance:  0.0218 ms
+Render:   0.2275 ms
+Total:    0.2942 ms
+File IO:  5.2396 ms
+
+Overall:  0.0093 sec (note units are seconds)
+[RENDER] scene=hypnosis size=512 seed=0
+Rendering to 512x512 image
+Loaded scene with 25 circles
+Loaded scene with 25 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0722 ms
+Advance:  0.0197 ms
+Render:   0.2950 ms
+Total:    0.3869 ms
+File IO:  20.2524 ms
+
+Overall:  0.0359 sec (note units are seconds)
+[RENDER] scene=hypnosis size=512 seed=1
+Rendering to 512x512 image
+Loaded scene with 25 circles
+Loaded scene with 25 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0669 ms
+Advance:  0.0192 ms
+Render:   0.3631 ms
+Total:    0.4491 ms
+File IO:  20.4059 ms
+
+Overall:  0.0360 sec (note units are seconds)
+[RENDER] scene=hypnosis size=512 seed=2
+Rendering to 512x512 image
+Loaded scene with 25 circles
+Loaded scene with 25 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0844 ms
+Advance:  0.0220 ms
+Render:   0.3028 ms
+Total:    0.4092 ms
+File IO:  20.4223 ms
+
+Overall:  0.0353 sec (note units are seconds)
+[RENDER] scene=hypnosis size=768 seed=0
+Rendering to 768x768 image
+Loaded scene with 25 circles
+Loaded scene with 25 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1034 ms
+Advance:  0.0215 ms
+Render:   0.4445 ms
+Total:    0.5694 ms
+File IO:  44.7771 ms
+
+Overall:  0.0796 sec (note units are seconds)
+[RENDER] scene=hypnosis size=768 seed=1
+Rendering to 768x768 image
+Loaded scene with 25 circles
+Loaded scene with 25 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0976 ms
+Advance:  0.0209 ms
+Render:   0.4165 ms
+Total:    0.5350 ms
+File IO:  45.0009 ms
+
+Overall:  0.0789 sec (note units are seconds)
+[RENDER] scene=hypnosis size=768 seed=2
+Rendering to 768x768 image
+Loaded scene with 25 circles
+Loaded scene with 25 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0946 ms
+Advance:  0.0214 ms
+Render:   0.4139 ms
+Total:    0.5299 ms
+File IO:  45.6132 ms
+
+Overall:  0.0774 sec (note units are seconds)
+[RENDER] scene=hypnosis size=1024 seed=0
+Rendering to 1024x1024 image
+Loaded scene with 25 circles
+Loaded scene with 25 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1275 ms
+Advance:  0.0208 ms
+Render:   0.6120 ms
+Total:    0.7603 ms
+File IO:  80.6760 ms
+
+Overall:  0.1399 sec (note units are seconds)
+[RENDER] scene=hypnosis size=1024 seed=1
+Rendering to 1024x1024 image
+Loaded scene with 25 circles
+Loaded scene with 25 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1286 ms
+Advance:  0.0253 ms
+Render:   0.5984 ms
+Total:    0.7522 ms
+File IO:  83.6863 ms
+
+Overall:  0.1489 sec (note units are seconds)
+[RENDER] scene=hypnosis size=1024 seed=2
+Rendering to 1024x1024 image
+Loaded scene with 25 circles
+Loaded scene with 25 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1261 ms
+Advance:  0.0209 ms
+Render:   0.6381 ms
+Total:    0.7850 ms
+File IO:  85.4599 ms
+
+Overall:  0.1470 sec (note units are seconds)
+[RENDER] scene=fireworks size=256 seed=0
+Rendering to 256x256 image
+Loaded scene with 315 circles
+Loaded scene with 315 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0486 ms
+Advance:  0.0354 ms
+Render:   0.2191 ms
+Total:    0.3032 ms
+File IO:  5.7249 ms
+
+Overall:  0.0076 sec (note units are seconds)
+[RENDER] scene=fireworks size=256 seed=1
+Rendering to 256x256 image
+Loaded scene with 315 circles
+Loaded scene with 315 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0498 ms
+Advance:  0.0355 ms
+Render:   0.2141 ms
+Total:    0.2995 ms
+File IO:  5.3183 ms
+
+Overall:  0.0073 sec (note units are seconds)
+[RENDER] scene=fireworks size=256 seed=2
+Rendering to 256x256 image
+Loaded scene with 315 circles
+Loaded scene with 315 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0462 ms
+Advance:  0.0357 ms
+Render:   0.2130 ms
+Total:    0.2949 ms
+File IO:  5.3120 ms
+
+Overall:  0.0072 sec (note units are seconds)
+[RENDER] scene=fireworks size=512 seed=0
+Rendering to 512x512 image
+Loaded scene with 315 circles
+Loaded scene with 315 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0648 ms
+Advance:  0.0444 ms
+Render:   0.2997 ms
+Total:    0.4088 ms
+File IO:  21.4953 ms
+
+Overall:  0.0287 sec (note units are seconds)
+[RENDER] scene=fireworks size=512 seed=1
+Rendering to 512x512 image
+Loaded scene with 315 circles
+Loaded scene with 315 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0700 ms
+Advance:  0.0406 ms
+Render:   0.2647 ms
+Total:    0.3753 ms
+File IO:  20.2871 ms
+
+Overall:  0.0267 sec (note units are seconds)
+[RENDER] scene=fireworks size=512 seed=2
+Rendering to 512x512 image
+Loaded scene with 315 circles
+Loaded scene with 315 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0638 ms
+Advance:  0.0400 ms
+Render:   0.2679 ms
+Total:    0.3716 ms
+File IO:  20.3353 ms
+
+Overall:  0.0267 sec (note units are seconds)
+[RENDER] scene=fireworks size=768 seed=0
+Rendering to 768x768 image
+Loaded scene with 315 circles
+Loaded scene with 315 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0927 ms
+Advance:  0.0419 ms
+Render:   0.4206 ms
+Total:    0.5551 ms
+File IO:  44.8438 ms
+
+Overall:  0.0597 sec (note units are seconds)
+[RENDER] scene=fireworks size=768 seed=1
+Rendering to 768x768 image
+Loaded scene with 315 circles
+Loaded scene with 315 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0925 ms
+Advance:  0.0378 ms
+Render:   0.4099 ms
+Total:    0.5402 ms
+File IO:  45.2187 ms
+
+Overall:  0.0595 sec (note units are seconds)
+[RENDER] scene=fireworks size=768 seed=2
+Rendering to 768x768 image
+Loaded scene with 315 circles
+Loaded scene with 315 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.0929 ms
+Advance:  0.0385 ms
+Render:   0.3987 ms
+Total:    0.5300 ms
+File IO:  44.4490 ms
+
+Overall:  0.0587 sec (note units are seconds)
+[RENDER] scene=fireworks size=1024 seed=0
+Rendering to 1024x1024 image
+Loaded scene with 315 circles
+Loaded scene with 315 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1286 ms
+Advance:  0.0376 ms
+Render:   0.5548 ms
+Total:    0.7209 ms
+File IO:  79.3260 ms
+
+Overall:  0.1040 sec (note units are seconds)
+[RENDER] scene=fireworks size=1024 seed=1
+Rendering to 1024x1024 image
+Loaded scene with 315 circles
+Loaded scene with 315 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1302 ms
+Advance:  0.0393 ms
+Render:   0.5748 ms
+Total:    0.7443 ms
+File IO:  80.5889 ms
+
+Overall:  0.1073 sec (note units are seconds)
+[RENDER] scene=fireworks size=1024 seed=2
+Rendering to 1024x1024 image
+Loaded scene with 315 circles
+Loaded scene with 315 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+Device 1: Tesla T4
+   SMs:        40
+   Global mem: 14912 MB
+   CUDA Cap:   7.5
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to output_xxx.ppm
+Copying image data from device
+Wrote image file output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1264 ms
+Advance:  0.0413 ms
+Render:   0.5720 ms
+Total:    0.7397 ms
+File IO:  81.2906 ms
+
+Overall:  0.1065 sec (note units are seconds)
+
+========================================
+ALL CORRECTNESS SWEEP CASES COMPLETED
+========================================
